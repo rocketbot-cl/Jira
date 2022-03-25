@@ -4,13 +4,17 @@
 
 # Jira
   
-Interact with the Jira's ecosystem.  
+Interactúa con el ecosistema de Jira.  
   
 ![banner](/docs/imgs/Banner_Jira.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
 
+
+## Como usar este modulo
+Para usar este modulo se requiere una cuenta con Jira y activar un API Token (Perfil -> Opciones de cuenta ->
+Seguridad -> API Token).
 
 
 ## Descripción de los comandos
