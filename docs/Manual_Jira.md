@@ -6,7 +6,7 @@
   
 Interactúa con el ecosistema de Jira.  
   
-![banner](/docs/imgs/Banner_Jira.png)
+![banner](imgs/Banner_Jira.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
@@ -82,5 +82,14 @@ Permite eliminar un ticket en Jira
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Id del ticket que se desea eliminar|Id del ticket a borrar|MYP-1|
+|Sesion|Nombre de la sesion|conn1|
+|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+
+### Obtener transiciones
+  
+Obtiene la lista de transiciones disponibles de un ticket de Jira
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Id del ticket que se saber las transiciones|Id del ticket a examinar las transiciones|MYP-1|
 |Sesion|Nombre de la sesion|conn1|
 |Asignar resultado a variable|Variable donde guardar el resultado|Variable|

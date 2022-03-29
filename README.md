@@ -39,7 +39,10 @@ Moves a ticket from one column to another
 Allows you to update a ticket in Jira
 
 7. Delete a ticket  
-Allows you to delete a ticket in Jira  
+Allows you to delete a ticket in Jira
+
+8. Obtain transitions  
+Obtains the list of transitions availables of a ticket from Jira  
 
 
 

@@ -73,6 +73,7 @@ try:
 
         myProjects = jiraSessions[session].projects()
         arrayAux = []
+        # print(myProjects)
         for each in myProjects:
             f = {
                 'id': each.id,
@@ -95,9 +96,11 @@ try:
 
         arrayAux = []
 
+        print(issues_in_proj)
         for issue in issues_in_proj:
-
+            print(issue.__str__())
             f = {
+                'id': issue.__str__(),
                 'summary': issue.fields.summary,
                 'issuetype': issue.fields.issuetype.name,
                 'description': issue.fields.description,
@@ -119,8 +122,10 @@ try:
         session = GetParams("session")
         whereToStore = GetParams("whereToStore")
 
-        issueMoved = False
+        if not session:
+            session = "default"
 
+        issueMoved = False
         myIssue = jiraSessions[session].issue(issueId)
         jiraSessions[session].transition_issue(myIssue, transition=transitionTo)
         myIssueVerification = jiraSessions[session].issue(issueId)
@@ -178,6 +183,28 @@ try:
         issueDeleted = issue.delete()
 
         SetVar(whereToStore, True)
+
+    if module == "obtainTransitions":
+        issueId = GetParams("issueId")
+        session = GetParams("session")
+        whereToStore = GetParams("whereToStore")
+
+        if not session:
+            session = "default"
+
+        issue = jiraSessions[session].issue(issueId)
+        transitions = jiraSessions[session].transitions(issue)
+        arrayAux = []
+        for t in transitions:
+            print(t)
+            f = {
+                "id": t["id"],
+                "name": t["name"],
+                "name in sight": t["to"]["name"]
+            }
+            arrayAux.append(f)
+
+        SetVar(whereToStore, arrayAux)
 
 except Exception as e:
     print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
