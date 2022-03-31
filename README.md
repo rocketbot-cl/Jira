@@ -4,7 +4,7 @@
 
 # Jira
   
-Interact with the Jira's ecosystem.  
+Interact with the Jira's ecosystem. It is able to create, read, update and delete your tickets, move them forward and backward at your will.
 
 ## How to install this module
   
