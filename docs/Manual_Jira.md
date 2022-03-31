@@ -6,7 +6,7 @@
 
 Interactúa con el ecosistema de Jira. Puedes crear, leer, modificar y eliminar tickets, moverlos hacia las columnas que necesites, todo a tu voluntad.
   
-![banner](imgs/Banner_Jira.jpg)
+![banner](imgs/Banner_Jira.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
