@@ -3,8 +3,8 @@
 
 
 # Jira
-  
-Interactúa con el ecosistema de Jira.  
+
+Interactúa con el ecosistema de Jira. Puedes crear, leer, modificar y eliminar tickets, moverlos hacia las columnas que necesites, todo a tu voluntad.
   
 ![banner](imgs/Banner_Jira.jpg)
 ## Como instalar este módulo
