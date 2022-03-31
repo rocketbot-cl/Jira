@@ -6,7 +6,7 @@
   
 Interactúa con el ecosistema de Jira.  
   
-![banner](imgs/Banner_Jira.png)
+![banner](imgs/Banner_Jira.jpg)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
