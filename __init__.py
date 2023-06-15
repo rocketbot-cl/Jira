@@ -171,6 +171,26 @@ try:
 
         SetVar(whereToStore, True)
 
+    if module == "addComment":
+        issueId = GetParams("issueId")
+        comment = GetParams("comment")
+        session = GetParams("session")
+        whereToStore = GetParams("whereToStore")
+
+        if not session:
+            session = "default"
+        try:
+            
+            jira_ = jiraSessions[session]
+
+            jira_.add_comment(issueId, comment)
+
+            SetVar(whereToStore, True)
+        except Exception as e:
+            SetVar(whereToStore, False)
+            PrintException()
+            raise e
+
     if module == "deleteTicket":
         issueId = GetParams("issueId")
         session = GetParams("session")
