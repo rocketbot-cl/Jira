@@ -1,20 +1,14 @@
-
-
-
-
 # Jira
   
-Interact with the Jira's ecosystem. It is able to create, read, update and delete your tickets, move them forward and backward at your will.
+Interact with the Jira's ecosystem.  
+
+*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
 
 ## How to install this module
   
-__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
-
-
-## How to use this module
-
-In order to use this module you need a Jira's account and an API Token (Profile -> Account options -> Security -> API Token).
-
+To install the module in Rocketbot Studio, it can be done in two ways:
+1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
 
 
 ## Overview
@@ -38,10 +32,13 @@ Moves a ticket from one column to another
 6. Update a ticket  
 Allows you to update a ticket in Jira
 
-7. Delete a ticket  
+7. Add comment to a ticket  
+Allows to add a comment to a ticket in Jira
+
+8. Delete a ticket  
 Allows you to delete a ticket in Jira
 
-8. Obtain transitions  
+9. Obtain transitions  
 Obtains the list of transitions availables of a ticket from Jira  
 
 

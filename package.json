@@ -1,10 +1,15 @@
 {
-    "author":"Caleb Cipra",
+    "author":"Caleb Cipra - Nicolas Garcia",
     "description": "Interact with the Jira's ecosystem.",
+    "description_lang": {
+        "es": "Interactúa con el ecosistema de Jira.",
+        "en": "Interact with the Jira's ecosystem.",
+        "pr": "Interaja com o ecossistema Jira."
+    },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"0.1.0",
+    "version":"1.1.0",
     "license": "MIT",
-    "homepage":"http://rocketbot.co/",
+    "homepage":"http://rocketbot.com/",
     "linux": true,
     "windows":true,
     "mac":true,
@@ -15,7 +20,8 @@
     },
     "title": {
         "en": "Jira",
-        "es": "Jira"
+        "es": "Jira",
+        "pr": "Jira"
     },
     "icon": "data:image/png;base64,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",
     "children": [
@@ -32,6 +38,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Conectar-se ao Jira",
+                "description": "Conecte sua conta do Jira",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -39,15 +51,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "https://myserver.atlassian.net",
-                            "en": "https://myserver.atlassian.net"
+                            "en": "https://myserver.atlassian.net",
+                            "pr": "https://myserver.atlassian.net"
                         },
                         "title": {
                             "es": "Servidor:",
-                            "en": "Server:"
+                            "en": "Server:",
+                            "pr": "Servidor:"
                         },
                         "description": {
                             "es": "Servidor en la que se encuentran nuestros proyectos:",
-                            "en": "Server which our projects are hosted:"
+                            "en": "Server which our projects are hosted:",
+                            "pr": "Servidor em que nossos projetos estão hospedados:"
                         },
                         "id": "server",
                         "css": "col-md-6"
@@ -56,15 +71,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "ejemplo@rocketbot.com",
-                            "en": "example@rocketbot.com"
+                            "en": "example@rocketbot.com",
+                            "pr": "example@rocketbot.com"
                         },
                         "title": {
                             "es": "Email:",
-                            "en": "Email:"
+                            "en": "Email:",
+                            "pr": "Email:"
                         },
                         "description": {
                             "es": "Mail registrado en el proyecto:",
-                            "en": "Mail registered in the project:"
+                            "en": "Mail registered in the project:",
+                            "pr": "E-mail registrado no projeto:"
                         },
                         "id": "email",
                         "css": "col-md-6"
@@ -73,15 +91,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "oEl0pUox6GC1lxzJ0AgGPRos",
-                            "en": "oEl0pUox6GC1lxzJ0AgGPRos"
+                            "en": "oEl0pUox6GC1lxzJ0AgGPRos",
+                            "pr": "oEl0pUox6GC1lxzJ0AgGPRos"
                         },
                         "title": {
                             "es": "API Token",
-                            "en": "API Token:"
+                            "en": "API Token:",
+                            "pr": "API Token:"
                         },
                         "description": {
                             "es": "Token obtenido desde Jira:",
-                            "en": "Token obtained from Jira:"
+                            "en": "Token obtained from Jira:",
+                            "pr": "Token obtido do Jira:"
                         },
                         "id": "apiToken",
                         "css": "col-md-6"
@@ -90,15 +111,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "conn1",
-                            "en": "conn1"
+                            "en": "conn1",
+                            "pr": "conn1"
                         },
                         "title": {
                             "es": "Sesion:",
-                            "en": "Session:"
+                            "en": "Session:",
+                            "pr": "Sessão:"
                         },
                         "description": {
                             "es": "Nombre de la sesion:",
-                            "en": "Name of the session:"
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
                         },
                         "id": "session",
                         "css": "col-md-6"
@@ -107,19 +131,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
                         },
                         "description": {
                             "es": "Variable donde guardar el resultado:",
-                            "en": "Variable where to store the result:"
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde armazenar o resultado:"
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -153,6 +181,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Obter projetos",
+                "description": "Obtém a lista de projetos do Jira",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -160,15 +194,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "conn1",
-                            "en": "conn1"
+                            "en": "conn1",
+                            "pr": "conn1"
                         },
                         "title": {
                             "es": "Sesion:",
-                            "en": "Session:"
+                            "en": "Session:",
+                            "pr": "Sessão:"
                         },
                         "description": {
                             "es": "Nombre de la sesion:",
-                            "en": "Name of the session:"
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
                         },
                         "id": "session",
                         "css": "col-md-6"
@@ -177,19 +214,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
                         },
                         "description": {
                             "es": "Variable donde guardar el resultado:",
-                            "en": "Variable where to store the result:"
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde armazenar o resultado:"
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -223,6 +264,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Obter tickets",
+                "description": "Obtém a lista de tickets do Jira",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -230,19 +277,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "project=PROJ",
-                            "en": "project=PROJ"
+                            "en": "project=PROJ",
+                            "pr": "project=PROJ"
                         },
                         "title": {
                             "es": "Filtros (en formato JQL):",
-                            "en": "Filters (in JQL format):"
+                            "en": "Filters (in JQL format):",
+                            "pr": "Filtros (em formato JQL):"
                         },
                         "description": {
                             "es": "Query con filtros:",
-                            "en": "Query with filters:"
+                            "en": "Query with filters:",
+                            "pr": "Consulta com filtros:"
                         },
                         "help": {
                             "es": "Dejarlo en blanco si no se requieren filtros:",
-                            "en": "Leave it empty if filters are not required:"
+                            "en": "Leave it empty if filters are not required:",
+                            "pr": "Deixe em branco se não forem necessários filtros:"
                         },
                         "id": "jql",
                         "css": "col-md-6"
@@ -251,15 +302,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "conn1",
-                            "en": "conn1"
+                            "en": "conn1",
+                            "pr": "conn1"
                         },
                         "title": {
                             "es": "Sesion:",
-                            "en": "Session:"
+                            "en": "Session:",
+                            "pr": "Sessão:"
                         },
                         "description": {
                             "es": "Nombre de la sesion:",
-                            "en": "Name of the session:"
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
                         },
                         "id": "session",
                         "css": "col-md-6"
@@ -268,19 +322,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
                         },
                         "description": {
                             "es": "Variable donde guardar el resultado:",
-                            "en": "Variable where to store the result:"
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde armazenar o resultado:"
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -314,6 +372,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Criar um ticket",
+                "description": "Cria um ticket no Jira",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -321,19 +385,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "{'project' : {'id' : 10000}, 'summary': 'titulo del ticket', 'issuetype':'Task'}",
-                            "en": "{'project' : {'id' : 10000}, 'summary': 'title of the ticket', 'issuetype':'Task'}"
+                            "en": "{'project' : {'id' : 10000}, 'summary': 'title of the ticket', 'issuetype':'Task'}",
+                            "pr": "{'project' : {'id' : 10000}, 'summary': 'título do ticket', 'issuetype':'Task'}"
                         },
                         "help": {
                             "es": "Proyecto puede ser id o key (10000 o 'MYP')",
-                            "en": "Project can be id or key (10000 or 'MYP')"
+                            "en": "Project can be id or key (10000 or 'MYP')",
+                            "pr": "Projeto pode ser id ou key (10000 ou 'MYP')"
                         },
                         "title": {
                             "es": "Diccionario con valores del ticket:",
-                            "en": "Dictionary with parameters of the ticket:"
+                            "en": "Dictionary with parameters of the ticket:",
+                            "pr": "Dicionário com valores do ticket:"
                         },
                         "description": {
                             "es": "Diccionario con los valores que requiere el ticket:",
-                            "en": "Dictionary with values that the ticket needs:"
+                            "en": "Dictionary with values that the ticket needs:",
+                            "pr": "Dicionário com os valores que o ticket requer:"
                         },
                         "id": "issueDict",
                         "css": "col-md-6"
@@ -342,15 +410,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "conn1",
-                            "en": "conn1"
+                            "en": "conn1",
+                            "pr": "conn1"
                         },
                         "title": {
                             "es": "Sesion:",
-                            "en": "Session:"
+                            "en": "Session:",
+                            "pr": "Sessão:"
                         },
                         "description": {
                             "es": "Nombre de la sesion:",
-                            "en": "Name of the session:"
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
                         },
                         "id": "session",
                         "css": "col-md-6"
@@ -359,19 +430,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado a variável:"
                         },
                         "description": {
                             "es": "Variable donde guardar el resultado:",
-                            "en": "Variable where to store the result:"
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde guardar o resultado:"
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -405,6 +480,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Mover um ticket",
+                "description": "Move um ticket de uma coluna para outra",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -412,15 +493,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "MYP-1",
-                            "en": "MYP-1"
+                            "en": "MYP-1",
+                            "pr": "MYP-1"
                         },
                         "title": {
                             "es": "Id del ticket que se desea mover:",
-                            "en": "Id of the ticket to move:"
+                            "en": "Id of the ticket to move:",
+                            "pr": "Id do ticket que se deseja mover:"
                         },
                         "description": {
                             "es": "Id del ticket a mover:",
-                            "en": "Id if the ticket to change its column:"
+                            "en": "Id if the ticket to change its column:",
+                            "pr": "Id do ticket a mover:"
                         },
                         "id": "issueId",
                         "css": "col-md-6"
@@ -429,15 +513,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "In Progress",
-                            "en": "In Progress"
+                            "en": "In Progress",
+                            "pr": "In Progress"
                         },
                         "title": {
                             "es": "Columna a la que se desea mover:",
-                            "en": "Column where to move it:"
+                            "en": "Column where to move it:",
+                            "pr": "Coluna para a qual deseja movê-lo:"
                         },
                         "description": {
                             "es": "Columna en la cual se requiere el ticket:",
-                            "en": "Column in which the thicket is requiered:"
+                            "en": "Column in which the thicket is requiered:",
+                            "pr": "Coluna na qual o ticket é necessário:"
                         },
                         "id": "transitionTo",
                         "css": "col-md-6"
@@ -446,15 +533,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "conn1",
-                            "en": "conn1"
+                            "en": "conn1",
+                            "pr": "conn1"
                         },
                         "title": {
                             "es": "Sesion:",
-                            "en": "Session:"
+                            "en": "Session:",
+                            "pr": "Sessão:"
                         },
                         "description": {
                             "es": "Nombre de la sesion:",
-                            "en": "Name of the session:"
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
                         },
                         "id": "session",
                         "css": "col-md-6"
@@ -463,19 +553,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado a variável:"
                         },
                         "description": {
                             "es": "Variable donde guardar el resultado:",
-                            "en": "Variable where to store the result:"
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde armazenar o resultado:"
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -509,6 +603,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Editar um ticket",
+                "description": "Permite editar um ticket em Jira",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -516,15 +616,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "MYP-1",
-                            "en": "MYP-1"
+                            "en": "MYP-1",
+                            "pr": "MYP-1"
                         },
                         "title": {
                             "es": "Id del ticket que se desea editar:",
-                            "en": "Id of the ticket to edit:"
+                            "en": "Id of the ticket to edit:",
+                            "pr": "Id do ticket que se deseja editar:"
                         },
                         "description": {
                             "es": "Id del ticket a editar:",
-                            "en": "Id if the ticket to change its values:"
+                            "en": "Id if the ticket to change its values:",
+                            "pr": "Id do ticket a editar:"
                         },
                         "id": "issueId",
                         "css": "col-md-6"
@@ -533,15 +636,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "{'summary': 'titulo del ticket'}",
-                            "en": "{'summary': 'title of the ticket'}"
+                            "en": "{'summary': 'title of the ticket'}",
+                            "pr": "{'summary': 'titulo do ticket'}"
                         },
                         "title": {
                             "es": "Diccionario con valores del ticket:",
-                            "en": "Dictionary with parameters of the ticket:"
+                            "en": "Dictionary with parameters of the ticket:",
+                            "pr": "Dicionário com valores do ticket:"
                         },
                         "description": {
                             "es": "Diccionario con los valores que se requiere cambiar en el ticket:",
-                            "en": "Dictionary with values that the ticket needs to change:"
+                            "en": "Dictionary with values that the ticket needs to change:",
+                            "pr": "Dicionário com os valores que se requer mudar no ticket:"
                         },
                         "id": "issueDict",
                         "css": "col-md-6"
@@ -550,15 +656,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "conn1",
-                            "en": "conn1"
+                            "en": "conn1",
+                            "pr": "conn1"
                         },
                         "title": {
                             "es": "Sesion:",
-                            "en": "Session:"
+                            "en": "Session:",
+                            "pr": "Sessão:"
                         },
                         "description": {
                             "es": "Nombre de la sesion:",
-                            "en": "Name of the session:"
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
                         },
                         "id": "session",
                         "css": "col-md-6"
@@ -567,19 +676,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado a variável:"
                         },
                         "description": {
                             "es": "Variable donde guardar el resultado:",
-                            "en": "Variable where to store the result:"
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde guardar o resultado:"
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -602,14 +715,143 @@
         },
         {
             "en": {
+                "title": "Add comment to a ticket",
+                "description": "Allows to add a comment to a ticket in Jira",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Añadir comentario a un ticket",
+                "description": "Permite añadir un comentario a un ticket en Jira",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Adicionar comentário a um ticket",
+                "description": "Permite adicionar um comentário a um ticket no Jira",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "MYP-1",
+                            "en": "MYP-1",
+                            "pr": "MYP-1"
+                        },
+                        "title": {
+                            "es": "Id del ticket a comentar:",
+                            "en": "Id of the ticket to comment:",
+                            "pr": "Id do ticket a comentar:"
+                        },
+                        "description": {
+                            "es": "Id del ticket al que se le quiere añadir un comentario",
+                            "en": "Id of the ticket to which you want to add a comment",
+                            "pr": "Id do ticket ao qual você deseja adicionar um comentário"
+                        },
+                        "id": "issueId",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "conn1",
+                            "en": "conn1",
+                            "pr": "conn1"
+                        },
+                        "title": {
+                            "es": "Sesion:",
+                            "en": "Session:",
+                            "pr": "Sessão:"
+                        },
+                        "description": {
+                            "es": "Nombre de la sesion:",
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
+                        },
+                        "id": "session",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Este es un comentario",
+                            "en": "This is a comment",
+                            "pr": "Este é um comentário"
+                        },
+                        "title": {
+                            "es": "Comentario:",
+                            "en": "Comment:",
+                            "pr": "Comentário:"
+                        },
+                        "description": {
+                            "es": "Comentario a añadir al ticket",
+                            "en": "Comment to add to the ticket",
+                            "pr": "Comentário a adicionar ao ticket"
+                        },
+                        "id": "comment",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable",
+                            "pr": "Variável"
+                        },
+                        "title": {
+                            "es": "Asignar resultado a variable:",
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado a variável:"
+                        },
+                        "description": {
+                            "es": "Variable donde guardar el resultado:",
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde armazenar o resultado:"
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars" : true,
+                        "id": "whereToStore",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAMAAAC3Ycb+AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAMAUExURUdwTB159RZv6xx38x979yB8+COB/CWE/yaF/yOC/SB9+Rp18Q1k4Blz7w9m4hVu6iSD/iF++hdx7RRs6B569iaD/x149BNr5wdb1yKA+xFp5Qlf2xp08Bdw7Bt28gRY1Bhy7gth3Axi3iSD/wFSzQNW0hBo4wBRzABTzyWD/gVa1SWF/yWE/xRt6SaF/yiA/xNs5w5l4SKB+yCA/xJq5ghe2hBn4hFo5Bhy7SWE/wxj3xp18CWD/yaE/wJV0Bx48yJ++hl07yWF/yaD/yeF/yOD/yOF/yiD/yWD/wFUzwBSzRRt6SKA+iWF/wBSzSaE/wBTzh169ghd2Rlz7x979iaF/yaE/xRt6A1k4QBSzApg2w9n4RZw6yWE/w5m4R559gVZ1B979wth3ABSyxJr5Rt28SKA/CWC/yWE/wdb1hp18SiH/yF/+gRZ0ghc1wle2Q1j3hRt6Bh08CCA/yiF/wBTzgJV0Bdx7SSB/QBQzwBSzSaF/yWD/wJV0A9m4iSD/QVY0iWE/yqF/yWE/xJq5QBSywBTzCaF/yeF/wBSzABTzABSzABQzAFSzQBSzABRyw9n4gBRzCaI/wBSyiaE/yaE/wBSzCOA+yWD/iSB/CeF/x979iB89yF9+B148yJ/+h559Bx38hp07xt18CSC/Rlz7hdw6yWC/SF++Rdx7BZv6iJ++RJq5Rt28R569RRt5xVu6Q9m4AVZ0xNr5h969Q1j3RFp4wlf2Qhd1xRt6Axi3BBn4RNs5hJq5AZb1RVu6A5l3xRs5wle2Ath2wZa1ABTzRZv6Rdx6xNr5QNX0RJp5Blz7QRY0hhy7Bhy7Q1j3hZw6hp17wJVzxx28QNW0BFo4hx38Rt28Bx48gtg2xBn4g9m4Rl07hFo4wFUzg1k3gdc1hly7R158whd2Axi3Q5k3yaD/yKA+h979Qpg2ghc1iOA+iB89gxh3B569B159COB/A9l4Atg2hBo4iF++CB9+CB99wle2Qpf2iJ/+Qhc1yaE/iOB+wZa1QNW0SeE/6wmy+AAAACVdFJOUwD+/v7+/v7+/v7+/v7+/v7+/v7+/oD+/v7+/v7+/v7+/v7+QP7+/v7+/v5gv/7fIP7+/hD+/v7+/p/+/t/v/v7+/n+g31A/QJA//j/+MJ9w3z8/gICvoIA/QJ+An4+fn9/fgICf399gz5+fIJ+Af9/f3z8gYN6f358Qf2+/f9/+n88w7t9wz1/u71+/UI+wH/7PL2C+YUqmFgAAIABJREFUeNrsnVlQk/sZxpHti8gOAhoiEALBHRTU2oLb0Z7jOR3PccaZ48W5tte1vfCq04t2ptP2zLQdskAIayIQCEEgCzuECElYZN8TERgEdzgKtdXp+/++fCzHltvzZb73MSzhislv3vd5njeO+vigUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFArFIyXncld/uHXnLgLhmH52F4FwTJf5BeQk54HkfodAuLa2+ATktBcAyb3BJyLeACSbT87+WS4uLU7pmDcAyT3NHyBXctFFOKUbXgHkFn+AXPUKICewiHBMPHL1bASCMQuB7KLPEQi6OgLx9msWn4B4h4nwCch+BMItJSMQbCIIxNuDrw/uLASCOQuBeE/O4heQ09kIBG0dgXi1rfMMCPdt3QdHBIHgiCAQ7xkRHxwRBPLT6iQCwbqOQHat6ycQCPo6AtlNVxAILi0E4qVLi59AOHz15SkQ7tZDvgI5eQKBcEu/ykYg3NIdBIInFATifUR8kAgCQSIIxHuI+CARBMIp3UAgXGuIJxAIXlEQiNfcfpEG0dETCIRja+sYAsEhQSC7D8kVBIIBGIFwfm8hBI4hQQSfIDmGQLjmJVeyEQi3dPqnGxN88f9fCj56KxuBcEzJ+49lIxCuGcrVz4/9GoFwTXeTk4/e2L+7biEQjuVlBIJAUAgEgaAQCALxEiAQNq8lk49rzKdrzKdrzI+TN3/4zTfw2KnfePTll/DYoW/JA/5s6ua3N0H0p019cfML0G143L5NPm7TT5inzM/u8REI+WuFAub3JF8oKpeinzCfBZTifllZ4Gul/MBXEeVBAarn/s/r6/Uvi9TqieLiQ8Pjg5dKQkI0c30V3b5a38oww3FLR3psbF1PZovDaBydagoNzWhfPB880NDQ+MJqFa6a1js7583v4+LiWru6HjxISLGDckaG0tLSbDaZVCaTSegHkVT25+//ykMg1Nbrz6AReGDQz/6tUISX7Q0MlBf+S6fTBakC/PPr9Xr9k1cXgEj1eGnp4CWNxnmuv69bq618+NDQFlWTXhfbk1mV6Tg7u7bW1FRb297uPj/QsND4Iskq3MgCJPPmuMePW1tpJL299o85IzlDQy6XjUZBoMhsMpmHy9f/5BmQy9t+0bz/9dsrFIqyMqU8cKmwMKK8vOBtgD8gid4T8wSAjFWPAZGZEo3T2Vch0vo+euhraLPUpDfHxmZWORyO1Kmppqbp2uDFdrd4YaExKSlpdVmYZcoym9+vrLS2fuh6kNALROwpI4DEZbNJ6LmQSqREMokEvpHJ/naPV0B+S5MQ0MvKMyOCrS3GEtmrDAx8dqAQgBS8VeU/z9fD1iqKoZGUlpaWABFNRb+omyABIlEdHXWxdS0tRpiR0VGYkYxgt7sBZqTRal1dXjaZOs3zcebHZETI2uoFIEM5ZETSAIlEygyKhJ0Uyd/v8QnIUXpb0faRR7YV4UIxa4uitxZxlfBwICI/daAwIgh8JECVnx+tjyl6Qoykel/p4GBJiTPEGRkp8tU+8jWEwdbqaK6LrWo5CDMyu3amafpNO6ythgUx+Mjk6oaJEDGbH8Pa6upKeABry24fGRkaGkqDIZHJWANhN5dM+ic+Abm6NQ0UvPoeR6FoGpTHW2BG7oOPyOWFhRfB2QvoraUvKlJfUE/4VY/vgxmZ0YSAs4tEQCTMYLFE1TTX9YCzt5w1rqWGNmVktAcvDgCShRdkRjZMWZ2djLN/SGB8JOUjIeKyXbddZ+1DygKBrcUjIP/YdHQq1zMVFGPo28yeBrL3tVy+VKgLKmBmpL6+CIbETz02dgiGBLZWiLO/olv0qLLyoeF4VFQ6IdLTQpw9takptBaGZGBALF5IslonlzeEWVnz8+bHK5C1EhLoEYG1Bc5uA12XbeYsiY3xFMlt/gA56TFzwWauymVh7HT2w2VKJT0kuqB371RARK/fA+m3GIhUg5GUAI/EOSBCz8hxi8WSnp6ZWdVytsWYOgXGXvsmeNHtFosbk15YwUay1rM6ydaCrHWkizh7bwrZWi6XK+26bHNtMVwkMulfeNTUs7dnLMGWmW9+R7Hpd68SZkS+FBFR/sO7AJX/06f66JevJtTFY8PD+waBiCYxsT+yG4ykMqytLQq2VnNzTxWx9lRIv/TacosHxBC2rMJlxkdWVgiSI13ER1Jga5H0C84OCCR0H5HK2P11jz9AfkFe/Lxt9YPaxiMvNy+PXVvhJGvJl5Yu6nTlP8Deyo+u3xPz8onar3hsbLh0fBCIOM/NRVZoSdZinL25LrPH0WI0rp1ZC4U+khF8vgEaIli7cFkIROYJEU/WAhshYQuM3QU+QhgADqnM4yjSP/IHyNabcJSAzb4e9xAw3Z2JYdRhRbhS+Z/AZ0uFMCMBKpXq+XN9NIRftdpvrHgYshYgmXM6Kyq6tZWVlYa2NksHhC3S2VtmIfxO1U7XtruZrZX0ArbWxjpxdjONhIxIb4qdriMuNmuxkUsildi+5w+Q7yiBp30IPCZObTV3xuopemwUFAwJsZFTFy9GEGtX5T+F0g7pd2Kieri69OfxJZc0ic5zkSKRLzg7rK2aKOgjPVUHHWdHgQg4e3vGInR2cSMp7csbYCNgJGRIuo7Q6bfXPmIfyXF50q90W1+X/Y4/QO6QrSRgE1XeVuDaceOiR0WhUCrLGGPXkc6u8vd/Gl0f80RdDBomWSskxOnsn9OSGfE0RDIjDsescfRMauh0bcYiIdKwAJ3dKhSaOtfn59+/h6zFri3gkUMTuW6TkdOWhC0jX/MHyMntL71g87yYl7vdUjzBWBEefv91oPIZQQKlXaXyh9K+pygmBpyddPZ44uzOPjIjj8JgRiwWcHZ6azlmZ9fIFSWjfdENM0LOKMLVZdpH5lfIGeXIAxK2wEgASZorjV1X9H0LdhaPgEDM2v28yDgIzYliGqLyFBSSiPK3b8FHYG29fAWV3a+4eJwcUUJmnOf6RJB+tZVQ2i01NR0dsLVaDhpha02FTme0Ex+BrcX0ESBCwhZ7Rum199JnLXJG2SrtNn5NyI//4Tfqk9zrWWR0j1fcv0/ffpcO6IDIuwJVvgpK+6uiCxB/oY7Ex8drNJq5vsgKka9vpcHQZoiKIlsL0q8DGuLU1HTtmzfB593iRqYhmujbrzlupZWeEWIj9pGUIXKNT4NCQoZDSp+3+ATkMjsLlIC1D8GPGeWx9xRKUQZEoI4UfrWk0xW8JQ3xqZ4+bPkVHzpUPV4aPzMT4pzrg/SrBR8xtNXUeIgYHdDZz0yTzg5bq7EhqdE6OWkybZjWzUxFJFkrAbJWCiEyxDZEKd9M3eeXO+IVE30p5s7InLTAWgSUwBO2qMOHw5V7lXL5gcIIIAJGkk/ftYrUfn4wI7C2Ls2Q90cqKrT0GYX4SEcHcXboI8bUUdLZwUfcDQPk9mudXPXctYDIEXJqJDNiZ0o72Vqe8yKvJmTbf865dV70fKU+3WYUdZh5x4q8ZRUUVFDgT4i81KvVxRN+h/btIz6iSZw719fdrRX5PjQcJ4etutgq5j3EM03TxNnb3WJoiJC1hJNC0/p61jxsLSDyIYHuIyMfyTkeZsS2eV7kFZBb286LAva8yHy7kwmzyRRA5PdKpRJKu04XBGHLH0o7EIkh1g59BNKvRhPSnygiW+sRMRLoI3TYchjPjqaOQmevXQwOFov/S96VBEWZWOFmaf9/oAGhW/ZdoZQpIshamFEnlVQ8ZKo85ewtc/OSnHJLLjnmQoHdbE3saUCgkVU2ETAiII0OssNIIwwqm4DDODhM5X3vX3rTVKrCBVs8NPTJfrz3Le97v6ltK4Obs3G7VJIBbKyiqUUOmx83N0Mhyj0ia5EzvjSyNH/mVUixynz5O3lafQDhaWpZrVY4jZXMfrWYWiaaWtvQ7IkNwdNPoRAddnuCDO1NpEf6W1rq63sLCtIn2UW5v1rETYI9+6s4Zr80tjIOGUfS0oZ/oYpcgtOIldUZH+uQHKOnlejkvK7GFv+Ii4WtLnBkjUoSDj2yYWolIGH6O8FufIjFUhgxVotFe11dWJON9Ug9emQxP78b9Bc4stK1uUnI/gqLdlSEqNahtB+Re+SsJEjO+FZBQHzxWYuykyW4SkIjf7nhiFD8HmEUGlonSmKuVN6GiwJo96varpohyT5BVKt6gSUiQfuTuoeE7DS1sloe9aIi7ZPprBCzea27Odg1Owinka1GZFEypK3uMLXIWYh2nlnX1HWaLxRE/b0DrXKzFwXW7m4OsAQsyKIQ2bq5Rsgerg0qI2QnhVhVxRKxgSUiCZJCOI3EtZoednb2Z/XzxoqoFrVI6DwB+32kg6S9LpB94G509BIBCfRI0vDwL2nPvn2G6ANWVjKGnPaNguT8w2NISXaj4NITUk1UV0soLj1n5Y3VhXWiv8R+N0wmg8EPe3ZzwFTwv+JBtkYtyRG1Qwn+cBo7bZ39PZLTCO+3ez4b8SDdeKoU2HqXl4ceIckO+pvEFRm+dOkZr6ycLOsrH4mSXjVKEC799htFt0ZxQXZBQn+wMSqJFEYhaA+/HaTVlmOru1UVuXx5xjw1TaL96cLC6GjhGNFf7BD7+jr1ek7Q9aIic6GhoXd0uufjbP4OxkG0d7zgBUl0hlQRCUg4HqQW5LyPFOS0vKOSl+miG8CLgpcWMcqLduZaWLTfJj1SFhhoamzEfsRsbkgMvvg0hHBkdNTOOEJAAoXITmNs++Jk+h5CjTvUI22pK6kE7cy14GtFU4tIJeF4EPXIt4Ts8sjK8ZWwtbufpeZJRae9aOQysGwXZNXICTrokXWw330sSJAyjVyumDET+yUciV8IsdsJ2RMSCEeaOglIolpyif2OtO/lz4WSaAfXGm9bWRnsgrFFY+suzHgIEvhajxXN/t2/r3mJ2E+7IKddFKDgaWUp77GD4pZ8sN5issULkiB2UV42+vktR5q5IheJawHZC2WuBV/LZiP2Wx9b0J6+RxWZR0XGx1faUgjYX+12SGvdpXvRWFnRH3ZRnp0lsqUU5Le+co7wK3fLxMWON3rKdRVrUBPrLUQfYgjZK9+WazcCTa2mxq3tyMiKmQniWtPVCwuWUTtwhFdWTfrM/qyeqPre+pH2ybnJ/O472Turz+8/H+dQ4+y7VxzFJqoVffgg6YGCIwhsXfNaOH/iBflckJYeoio6BPmvIMpfgtNhkfgvNUwpzN+bP5dgaJEe0WoDuUkiKy4HIGUKY6va4nDQ2GIc6WvCyoqmVu8IyZHFOezZdyRfqytF2o/kDbx4wWEUKYktS8Tv/qLQD5852KEWQS0E+SahWPjIP0aGeFQD6aD3505arZ+9Yc1+u3wfUWzDS+BIgJn1SHB8tSU5uTAiYcjf3z+MplYfQo0txLVGCqgi/wSy62hsEfuliuwS/SXNLjmNBCTNDO3okWtHGcw6FgX5HZXje6a+Ru+55bm9MqoBrtLSc0S2TtwsiaGKBP1AOLJBLbJFeuSyOSCRNDvHTEftpEeGEPzFop1jprEFsQXp+ZNzbP7qnmNq8bnCu44BUiRUkaXDQ0b24cdoEaVDvvKZgjiJlkiFUZDC6F0NF1deCf6etNLUKllbq6wp15btB24YTI3oEZz0KNBeCBdlCOmgTD2m1iOeWukkEakgO7xoX0lNgUKUTnrQI1giNiclPU57lpamdEiO7xTk984P3ijb785OoQIZ3exFt2gj9MjNkvU1Tj4A2l+2sh4JSJxqaJiersaGxA49Qj1S1xfWqSdgb2EXhWBkvhsrKxpbbbggmd2Vkf3gQNqzI/lAQKIURPO1zxRE80cJrCHC5Q9bEuwfsBddfBUjesl6ktnv+hWC9h/2aWqZWv0Q/K2YmWqYwNCqxtSKkJIPTZl9Nn1PD46s2kcW9+a6URIdRx9SpXOFuB/57O31vUNeIja7FuSq7xQk5+8KaKugLqqd4hYwdeNh/OrkSbbj12NYjmjLCEcMcBorApDExgHJArHfiDFsrIj92vS2qNye+t7YXuJa3fkIx+881+HKKiVlNi6u40ec9Nw9WIq+l3GPyVbadc0RovoxKYjmr0ruR/3w/5u9KJv1kgeG09A3P7+JiblCOEL0tyyw1QDRfrkCyB58EU6jvdABZK8D14KLQmOrHkdW6ZMc2FrVFaWyrzU7uyuxX/nsjSuiFiTHhwqi4rqUZvhAT6jfi87MlkSUS88hHH9ifb2SxpZWCqP4Ifg7EzA1hSzKl7gfiRijqQXzNxMuSlRuS27uyGL7Hm+sqEekI6tNZBqJ/t7FJSKJ9gziWs1qQY5Cqx+bgpz/wv08RHRLLyoZLUZ6o1FNbIkS1yI9Au93rfKnt2/L98tMJEgaI7cj+ewN9yNs/o7V4hDxoT8pRGK/OA3FSU86laSbg7+kEFeI/e7G4TR04MVBdPQ9KULnLMhVHyqIcyEnKHUQBQ97UUEWr9aBG3+LuFZl5U/hiJkGmgytrVUwtszmiangYIIRolqO2oRvEjj4a9P3R/U8IvpLyD4JsrVDXEs+nyYcAf1Fj0Qjiv0g6bqb7eY7j9a46h5vEL3tRfWkR26R750EDPT3TUkJhlYQNDs2VlvLy4TsAVjr4uxt1MEX7U/q/DP7Mm22qBYSJGC/e4uhuLJaVWKms3E4RMy7K1+QZLgU5AgM32NUkJyvi+UYr0fa96P2olMqCsWlVqJaVJL1yhoEtkizG15WbW9jQQIcga9lsSfT1Ep4gvuRzP7+LD7pae+FIMEjBnQINcJFoSZ5l8dcC8e6hw+ua45wZh2jgmjO/1qUg++CYi8KbvaiqFArUd64O2tVSnqET0NLYsL5fpqAxMChxpkZ89QEWoQq4nCM4Z4dWRRC9n7qEWqSAppa3fnZ3YhiE9da2eSLdrjxAyQRCUeua45wZh2ngmj+5qr+PvhwB5X5qi/kmvBTOIDsF9aRDsJNz4apEYv2ywEBiYmJwRfjQywhltEIBH+Ja/VhamURsj+KRfQBT0a5s6O7XzQ+3sWnoYzsVJGl10sZLgX5/2fWsSqI5k/uM0r8mL3ofEdk6sXvnLslrXVxrVDOD0YxtRK0E5CYEydAtuIXLJbkMfsQKcSwsLBMvd5ma4FoLxhpn9ybQ4RudZVgpC01JWVw8NUu0kGIPiy5FuSUjz0v6xTsRdH1INfLXvRyg0Un17p56w2fT9fU1GiJ/hL7NRikUONEw/T002oLsV/sR4b47E2PHSIvSLDWDQ11nvSksI0Sx9e6B69dC5LjYwXhBwQJ6izytBdFb3vR6PpkFByQUEXWif2WB2kDETM1EY5ELhP7RWArHo+qiUDw90mdotmx1i0gZE+nkuBcIRV7doTjURGkgw5ufDwB8OkXRHPqf7IXXVBFvZ2mn3P0Aew3BnJECsdLETpzYuIE9QgDiSOCj3X9+YCkh6YW4Qj1yF7+PHaIq0XjRSttmzS04mCjvBg4uO6ZAPCpgmh+I3jOInd7UXQuRWRoFwQlM/9esHJg68J6DE5Dy/kxHI1MtohqTWFlFUISMWIsgajWk7C6MA41RoFr4RBxjnokOxvsd7yLuBaWiCBbNzRH2CLHryBO3PSyF0VRkepu9qIzog05Yv0MUytmjRRi0L42cIMk4lZVZIU5gKfWU5z0OOy1HMV+2BTWqe/sl9a67QWTe93dodDsq9hYkSDZxaZ9YOCG5ghbRHMsK/KR9KLTXpQTp4LzcYDyS7EU+xHcvf0Bz6pBOp4XJMsoSWIwotjVlmSHozYhwf8bf/+mzj5bVk9PTy7O3toX87Gyytbp7qemtnWtDKbsxu3mdXTc0BxhixzHgmg+/8I1FOQGGUZBPWkXXZWKUGw0EvQr4fgSxEzDa4Kkc4WXjVsEJDMV5gmuyJcWTC2+n+YekVZWuYiZkmYPnd/R6YpAttAju1QRj4Kc9r2C8H9fK88oT3tR8HpokLHYNcX1H/auLSbKMw0PB50ZREbOB3EyVcHDAiqi0KVWihp3E91e7OpeNL2pN3ujK8nuhSZyZZu0u0mv6HASGI5jYTgsyKqggAaGQqAgi3QHJopKFQ+o5WDM1t19n/f7/5l/BghIqUbpn1IwMZGZd77vPT0HZrRD9CH+bn7+c7PPFEUkl4rfApYYwK1VSJkdyAep1gKokfqRhISIhI7o8X7boB+qX7HVRWofdQ/ITzsiqjc0In9yPSIu40W1RM3FeNH1HhNnJVNdDMmz+PgD5WZeWT3MyakcY0qP3mSyJKPWKqE8grmWJ1e/FwRZN4J69mjbzhomImL2e+6dR6t/GHUPyMElGBBR/qqnE9gVNCu38WK2YrC1aVNZMVW/8UaOiKD0iOrXy6K38DTe0N01DBG6Hl11WzU1JBBGoTxirx+3DdYMbns64ktnBJyeq9MC8pNGjG9sQFT73sNB4PHvDONFdYbzT+JwfO8YONJfhVAjJZJ4CKNMTCIidXUFvGgHqDGZMvtKhmJbmRoae6GphQkklzrq7f3j/UJfdoTH8Y8e/TAtINvjlmJAZvFK1cg9o/t4UT4sYq1btqkMIbkbnsL9iDcvSAoKdufl6U19Qsy0xFDS1QV9WXSIgVurGkMrKiIos9t5h0i1lu+NtefQs/959mXakgqISvWXvdPHi9nO8aJyh6jA0Ik9u3oVNSRG44MH5c/NE2dyMUaprPN4DOCvCfKyrB4U0NVVau2BKjZEH0LbGWZqj47mwRY0mCkkFy8en/6bHVqaAVFtD9Yoqt65x4s8+c2QMY3FXGzhjLAIHfJI5a08VsW2UK0FFTrolDMRESSrraG1teLW2jmOJWLzCCR/79yZISALv7RUb/iz5bBzUyiNF90ltZwYbGXeh8KWVvtkeZbRmELVLzeIOXWsnZmnB6UnkvFaSd0iIrrq6lg6I0AHSf0I0kjzDUCxZwjIwpsR1Rv/rItx21Wp5eT9vcCWalwqruwMBxS7rAwtIqDYLLC1jFXoPG7xVldPHWJvJOBBfEZ62nRCp7yRd4j1ieMA/jY3P70x8u2MAVlwpaV6C579MW6yTe6KGxqRyR1jLRRlPPvdVKx9IkhWGP7mPnx4TxRbJr1Jv8JS2DtUuNIwfDbgrCTD0YQlIvXsFfX143aeojz1pRZxxoAstD1UvRXPlnfdx4v8yDRpRZmllgkkKJcpsxdnZT2BTnm5P1W/U7i16jyAxeYdIs+1OgMAamRKT2wTS561U7Flt9uiMUWha8v3+KzThCUbEDil7lUmco2b4LJa1oDIdtkAg9AuzkiKGXlEuCsAZupFt9aK5AHeWGGMYoXfhRAzbaxNiKDyN7G/wTbo93TbbAFRHdy1lAOCN+DwXgV6McN9v65mRGO2AoWNv8haNdA8Azd08szUQxER9oSBDAfUg4aTsLEq9fRsA8q0BbjfiIjEeuiUY67VfHxWBMDSDgiyyccxGqmGEtQFtWK8CCmhbCcRUZp4sQazMcv4AD37VC4iEjQ2JkaNYFlFDgHVONxltUI7szoWGsyhkBig8pcze82sAVkQ4kH1tj3b9/0mZpfaDdfoPl7k/C7AXVRsrcrS/piFM2I2m1k5Hip0u3d7XTfpi1iErqSku5sJJKwLGFi1tZ2hD8CiNAw2bEtXLWJEVG/lc3Bf6qGYvYo1FWd7JTzIORDm/Ugx11r+5WcmlgGwFQSSVYjQKS/qRUSoRSxdU+r59ddNDH3giCR2jNvs1JCkqxYxIqq3+dkOm7f9eOjbunX4Rt/3s73bfrZ5O6RhMIq2GPxppJGJiUmGmVZWsgbzdegCIo90spwTMruOwfEt7e2XcG3172xoSFctYkRUS/s5LG6tVau0Wp6iAIwy5S0RSKhnhwEJ3BWGVhqSArqA+9VVxzbxWhe1VmIHMI3pqkWMyBIPyLsyg6SM+hFAscvNQqecevaQkDwvL7q2gA6K/KCkU1BDPdva6IgEwn+v9lIFs3XTVYsYkSUekD2y/R5HhHUBodSI/QiWiBQSk4nzCJVaw8MBZ5HZ25BHAqtCG2vbYZtUP0dAXrL6XepXljR9hMZAFgjtLHlGLSKE4ysLHoeweJCkZkpdO5ysKCKxsgQzaq369LlKjLhfAjLvEyIDijIzqNbSsrkYJZJlPPxFPyKRdQeSe1lioDvAytqZuiYdQI21FRUVHZdOzzlGiPslIPO+srI1sm8SSwywxsCEeSLXO9c7CGMtEEj0QmFr5VCncHvz9KRbC8iHxnbQFU7P/e8Ev76ApKYGB6cGp6biO36gH4PxY7D0xz9Mf37v9vzR7fnI9fnko0/k59gx+k88R48dFc+po6fwnDx18sjJk0fo4f/j69O/fznDCZFRK2yugH6Ebi3zhA8W7fegjJKHRNIHiQFAHzDYWlNKxZZQMw1tpGtrHgFR/SrudQXEIc2uUWxPNeyAI+mJmc0+5mXoiL3vVTI7GcACC4pLONcCflPKTbEuFp9C8AHaL3XYE+02mx8G3jdGRpgRANcVyIo9u31eUh8R5kRCWOwa+3zAwmuDbISDHz/74ku3KkshVcfOunRr3U2hzO4zOfUQbAVQegDFHiiiWwsyHIKsi8FWLITjQysS5hOQWRAAryAgGifNz0VPwaGC+CDf7D9xJpeBBWiJb0FPl+p9OEUNFZYYkpK4lvHU6ZoCIYUIjFoF7037bayW79s8wix+cDRWj7KnxO0wBOQyJJOEHOL7166x8aDT5g6y+a1fta7/6xcuAVG7kXUh5wTRB38Io+R6e9O9VfAY8rLXTUVFkR8UGkpYFhD+e1i0BzaG1oaent87M79DsugB2eXEO2e4vVqptAwPf04vd3JyCvJVoDDlee026U0DluTISMxWxaXQI9EBWmSLD/DKdkJWwXeEAgIAzsWr/6ZDsnrHs9us0MOmEiyH+C+KCJuqtcrGg2xyh6/W9V/97oTLCdEINVPWRQFdoZhJVgeYPZ2bg1trLO+W6TuThX5BQLGlmJ99AAAgAElEQVQNBnhUgvaGHSKKrXkGZH6HZNED8p6bXr5Imf/TUB2zqYxf7XJj+PPyiTNTQpY9aKxSDLtNFksyBHUNBmROhnHqYMtJxYzwd6aIjDcMDg4Cfg4W/zlIga8e3cFOOGHn71++eZPlYFgOMUq2MJCNcFqdJ+WzE4qkzgssjcR8y5QHW+FwewMPEbNfD/4F9dDyRx7pNCR1BYCI+DVTelpq0+a/tYl5HQFxmqm5KGCoM3mwmmX8kSKSnzIBJqw3PDkLPJgujll3b2Rh7xDOiJW3phhTXKjaCjaskLCyARFVU+Pr6/vrtXfOsaoY3GufPWMjyMtsuo0jEhUl1BChzy77rmwQHvX4+psyIEotCA3oCnRrLTfGg2SFTOedw+YKBfjMDAgf187OrgBrqRWOiNUXqi5Upb3E2zPnvbXoAYmZ2fncASzQZjms1JblTsmOKwW3vkNmt0DlgjJ7QAD7pIKgERvIBX9CO5h+2ED4+W1jBdcbyOw4IuAx7bh9JSzsftjmzS8kneOob95n38GNG51OOPwT5/hPnQGZ9hvyzWo0xvvnl/v45AonK48xOiN5JlMfZ3YDJbpufGTaWPVha9pLvUFzhORnmA7JpCYF2oODlK3Bq12VVYxLK/85zO0mBfiG+y9KnH0rkNnRE3eiA7OWgg5AFX9LI5eXiIidrq2ammZJwpUS+zuCM75DGEFefvGCXdCp1vovXO6Ez8cG2U9YTiifn1AGxKEDrAaKCMIo2qwnEPylnp0J7XVBlR4hIXSITVQMUh4BOr6LIuKpY2vdtJd8i9bFvMqAfKx2E9pTy4IYuMIyQSnTGuOpH85noAdqrXsCVssbOmjzFJYM0wtecxYab5CmROqspWsLAq52W7/wroWbMCy3L1L1O8rae3CLYjthufqNugalY1H8ypZRreKwHJFHJ0o+ryZbI9WDXKBTSOBRSSGpywnyQEMC0QcwQzHXSgpY4wkmIn1i0l76TdqyJ+6VBeRD5X5OLcHO3W6EJ0KV3ewjJBWA4YTfIN9ayclsuWIYpuKSrmnPNniuBEJVISGCzkhitM1GecSvRmR2Nq+9Orp6B1tKnL9/k30gkdm/EcYrGzdKbqnrXW6uz5XnWe2U4pJ1yqWWKaWctWp4QcLuCqY+fdEADvHKbhjwWbnySFvI+7RvzysKyD7ufR3yoe4M5UwI82j5A3ig3B8QThbdgwcORUR/3eIw+ADPDx9BHTwgW2DvXAEOP1SOgS2o8WX0+Z21MOaE5/aVK0waxxnZ/A/kkSg6I5J9bWsrcgfSx3oRlfW/dVxZQsVfnaFUMEfPxC0TrMWm2BMGPq5wexOeMGjZxcaKznDaQt+qmc7Jogdki0NtJMMFYyBF5T8CwrmcLXAAqmVDevifC6hHn4WH3WiJUf1aewDjbKPqN7CxpZEye0Q9tYhsXwApxG/PiZ4d8pT/ZEu1m/fDwqQzIoxXNsKciNuRDYrKV07re1xYvE5GIuYK1LM/CL9bzlMU+F3wGfHi4S+OCH1khpk+3ZO28Hfr4IeH4n7u4eIuBaQzQx6gyELUfCGoQc74P3XX0lRVekXleQ4gjehtBFFe6vVdiogYKbXtpJKUlZhRhhlkkOpUZZRKygySqgzyF0KBl8flFQFBGuUhiIm23S22qKAIKDTyUAQaFVEUxGiy1/q+c869V2bpVF2c9JTb+3z7sfbaa5HDWVsdX6xZta7SmTFUdg12x8Z2pt26CWaBVE4s6b5Ar6UuNIbcA5R5k6xF3emnEpIXC8nz8w+vPFyUrEWhN8ocv78r84jKWse2bFFeqaqgHHdeyIe6zJ68twWrcKy7N/+Nt7o2mlyUpvqmUmut249C13mrs6ajpvvU/xIQLpo3fvzLnYf+fwH5rWnfXOZpKq2BQuK8EwOCCs+l1/L+jGSoiCdPwl2Fz7DFLlHUc5R2IHmrV3eE6kO/NXQcVHdlL93t7fAvyLysXOkv4NRPiSG2Up6SQm+StPQ8shV2UcdsQAtP5bizD1nintdjO1lNJ3m9Uung0A5vsdKxI+g9iP1KL3gTMM/p338v/9/+sHHjjh07Pv7+A/JTq4c0AliDtn0BimYlz2X2TkvzWxvBrDVZSg+csL6UlApqhQJoHO1ArxXaAOdaNlu8K8tpeSmVXeaRlSuHm4cxIcK+i8IKrTKzq4hoG/T3yr/rASOyxfavtQJiWvCnQw9SUrQF20AzjYxMAjlewSj6pKcsrO9Mf/96AFt0aN/wp+BeMXxmBvDNTU8gA1qa3yr1a6cJUVArKVyd+eGJpFC9NfYfuJip6QgNPYWLGYCre9ZeJCGqpdcNi4+PeBBge0VNKfuuxcWRke0wMECv9c3mu2poV4bChFDQ+h63uywjwFjXoyMDNBQX7dPeCQTk9evCIkj5lyr36f7+mPXUBZRCF+QB2W36nM0Yhr+oqw6IFM2qyqqo/Mi9SYTj6YBT6GqCAaS8kb6emPUVBBqxx65BZb96te1S2xppta6x18KFBpLWrLyR8YyuC1JIAP0qXKt1MRGVPVW5DsIK546ywlEZ62vfGmLo9Gp+cD9Kha0orHW9n1TLQ9btYEhIiZIpr8gtRzcolT3IA7Lib5aDl+H35dmdDA40C1ZpGRhFGOQbKZpsgglOyb17YdJq5aqF0Ki0+xs2oNdqaNATIjbZLS3uAfegRETmkYNS2R8B+33B/cjDh4mJqvsFFn/OdovieoRGkH5F3dDwohMSvJLH+shqFQW2puMBKxB6K9RSNZAFzC3/li49wR6QH/oiiv6HGY65F1K0hWt552QgfgVYy1VfP0afqJ6eCrT78gUeIPuGYqFXSfZobKy7BhecHIzsZ3mfDBdIVPbkhRfn1cyOJ6LMojajjhy2kUar9T3uT3JwjkkwlJjqquGtUYWI0DYUHw0FZpuaqBwvvVYFsFDptQ4Ee0D+6Dd4LPnPQIqG5kjlSSgqVM9Fz0UXAeuebHIpFKWMW2xQBtMkacG5VkbiOFzMkOpcVwf3Anf7YOZl3MxkoNWCf4FaWOmZHT6Qqecka22mzQedOdn2bvKtIU6183ygiFbAjUEUdAHfVGthFNczNY+gG4zhBifYA5Jl5SXDCFTjM30GRWxMySqAnC5ca18/Qa+l2FCoI5K31tPf4xZlwLtPN1xtuATn2osX9+27njPU0vuyd7D97GV4oGd0PbrQ/KW0WguStM5nS2X/Tiq7vBH0Wuh+pbZzZmerJXGxAvIfw1bwV2tn685Hiz5UFaAdRKnzxkv3i14Lh4hHiMaf6c89ejQ26AOyYqf/zaXtTmQ3NNobkmaD0KVE1iqe09Bv/bMxwFplUtn7pdUqp08UKjs4g7va2ohrNWKr60Zlb/8I98nyj1nrPtYjwH7h8Dxid7/KBn3rA91rfZCy8iwhDo/HkUNjsjUgZooDknx5I7UUfZhsku53DOBvinrFQR+QP9vSoPaOyv6ZHl8BKymafyWK4kX3O1eMm7JwGYjHShNA4pQPsEIdJ48eALEAAla7cC8Od2daoLsHBgZxMb5y5coumRBxxU/mg3S/id/BdRABSYV9F7PWAz6STb5ziL/bSIBcjeoIqxSuMJFU68VHg8RaP0Mf174UKGyVB31AsqzabZ8nBwzDlsyCfH6VPPKDdGuthTQWhoCLAjXdM9whxqZBTxfWXTwY5xFTI+78cqBgtX//YGbm2VlaDqZfSJdea0o5E7UC1YLLB1otqewgPkhh/3or11Q6IJ/Ky/U48kEe/1NRhx4UCV3ACaWM8oRipkCn5ZuRbvD2b4KefrZTnWA+Ngx9FuMPNDrhMniZHPlvcmprZRzhzrTpWX1Cwj1OxBUxt49Kc5nWSSvh0FNotXjohzV7Hc7KBtqRtVBHDqL7lcr+JZe6ID6g13r31VepaLZkZH+vjSCPOS/kU8PnStfn4t30URoq4CMBO0MiUhwdQXZ8PSISVhYGKDT4A7LDT5/Kr56YPqUdfC2aDaojP/n+XiMgTwpdITOlYzol5AJoRNYa7ejgfiROXSc3rt23DhrHAOPbz87OjkPA1dILRdbKJqyFOpIqSQuGwneBxnOHuMl6Ib+wxf8Mv2xlODKbMNblS5a/cbo2vroatc41GYJj3TK6KwR/QLIO6XRl+rGzAq778WvBO0cfg3lEWksu6HDApETAZR5JgSx7bHlsZ+dNpc3DC37IgOOJ7KM6D9zUwNca7hoG9ntfd78yjSwmjigwHiEhGn/njuq1dEA+g6eV4WdAbQZSyuh3URn1/HkkH3JxND4azCP8aMJ6+oM/IJKalWy+4eOK4wM35jmeXpouyKrpjZ9TpwA0pC9l+3tGkW9iSWlcDXPn0w1xDZ9rL+F15AYNDAwQ+h0/KCMigcapFy/m58GgGwFda7taj9zQ7CDM7FZAfhwIs9kVz4oSu2EOTWA+TGuJAcwjISEJCUdAD1oGAcnykXJ1qohpHVvaN5f4tQXbCipPVkYia33iRatVDMMVichMSQKzFiLybSxInKs7wGmELdGaNk6IdfCTcA8p3b3M8eHxYZkQ058+vT81lZwNZ6IrnBDfqe4XsNbhu+qN6ID8zle80UpaHq3AYXLJqVaIRBpPWsIoEUWFReGYR7h3XgYBWfEX08IkAta4gRAedMdkHsE4IiF5I9NXNDEjl4zsXJkya9FNQurIzQ08vGyALdGei4zIP3NyclrcMCbCDf94hswjzfCKgqEExdkTE7f/6x1xLba/as9uBSTL8Gk2PH5/pZlnBrBMWeuwVauNViJ0mEdKSsqWQ0A2KpaJqSkOhhkQCP1rVd2XLqbgJM5lptH+Vr+C34pERGvuhaX0U5oH/h6jRFFOd/ONQCu0EScz7iFc+kn7O5s5DLV8bKzSp6YWsq9k005YOxNhiYgJkXXkuM3ry1OydDZ70XFe0Bo2/C+Gdg2H5ktq5WfTJJUdz3g5BERLr1iCI35Tl60jalo6JPL5KRBPGstaaLdiY+VS5nZh4HD258bQ27nzAJa63d2Y2des+WIPoN911zGPDLxUJpBSReBdC3/n5GRafLQmcs2u9iM3uB+RVuuEz37TZpHZRd3jOIvZ8luQqsEj2TsR/4bUh3DoogBqXBYB+clSu+olsoFpJQSUTcJaXi1LCVZBCEQQy86kxKD7vR0bqw4vtcYbeLVr9zWSZCrd7/7Bs4qvRSY2fDmnzmfPZ+NYgW9EWaUCjT98+M5WKyA/WPqP9ARIpFiLTmUb6q2Ojy5+ZVPKlkVAMBwapq/5UJ6/+bnhdJrGWxoXYGRPknzgtfqYSdczFBIpm319Gvvlio6URthtE9aCzIVMiG6IKrRnzs5ezujqar7wCIzGqYX5K8C1RkZG4Mt5jkijckE/YdPIDDOgxdLnFIYfE8WggXhVFBbtSd7pauk+eIgolX3m18siILsD2YuGSsV6h6hkwD36x4KIDfNz3MHqrKWoKCEJYwBW+3pAfCinvwdAFMla3afjtJ1EY9216/JIhsjXonkXjIkwj0zJI4ExZ6tqftWxAptfOyA/D2g4nP2zLcTh6NPJG9mG9nciP0mm2FcRESBn1Jcuj4DYZ3VGXgB70Vd4z7DLTMG2VVXcmE4A6FbXMpKkXZKjj5QxbbH7Teuk7EhoKH2idqGyq2PYnBx3736qvMFwW7LW06eQZl9I5n5kkdcjqCObyQ66e8LB3fyeseH7t5o6QB6b16gqO8ZYEH9fY4otnFwmAcn6kaYA2apiASsqDf5amLxas598njStcC04O4OupRd0GBDJ4exMk7QFc7u4uKu72j6nBSQErIZaevcPKEVdvBEU9vT7yeTPtbbS4W477YRvpG6Wym4FZMXf9TPw5NlzrFPkDCMQ/OFa93lkZBJkOIqLIiAcv0wCokilS9oYAGF1ONmmbX4uj0SN7N5PUEfCpZDU1+ONsNlKSVGUxs60mlFIKoTGQXJaGddquSToJQ3OXs4E9puRDhfIKbrSZ9tniHpC/MYOyK8MS6bRsAdZm1JqJyzHrv0tuPFR+TggYWYNLwxfLgFB62uxF52MYMmHGjbO5RDQt1VyGt6r3M9f8YBJ6kjpzBgU3np6KvpvH1XmdjVaK/TSJXgXgEAHExzFRRmEJ/1BaX6baRUFp6jsh2y2ElVpR2G3A7LRDIB1fLn7ho37Pva9ccEcy/ZDcQGWTUB2H/KxUnG2DX6bRNOBuU26P1ZZ2K8+zoDfysyM9FphtK2t4DyCiGzoPhUqzVYcQJQ9jWuvweCjpZdPhKb0zf9l79piojrz+AFZvsOdgVkuIgRpQqJbQRSFVYwabfaFTZ/cBxJ97Gr62rdusm72oa/7MgEO9YaMi4wgs8B0EalQEiQYoIYgCkxYqSxYLxWhXqqb3e/3/75zznfODDbZfRrcadI2zovJf77/9XcRFCuMI0D95uXl/eN7OSHyJ3Layqx/duwRVfSiEaEsz0xrXQHFft26hrQVMwHhSWtd9KJPVZ02S7xMWpgQPYFk/kbOJAgkNm9+NwEMNT05TfpVIJVBcxq7X7AQQdXtv8K739IwD0kwWBFcTE2d6BG73+cPXxV8s+fv3+VRZf96O5HeTjtHWGbvDchgTDfv7FJGU7fqHmMNbzJFQ1hf62lFsYudgGjHXT5dETVSdMO6WUh1JoavtwT7XRNYKO9y99OcnPPQEwPKFP7n/vvjJhU2/saN3t6rvI7k0lWXZPfSV+g+gusInxCf3yv4CkM7dr/Aa2HVqATk8yjbNiNCatbcL1DtBxiFHvIu3qIHvoyhgOw+Kp+Gvt64znzMVKOWouw4j7xNXKrHmV0KTntJ3xjd7532FOImp/mraUCMh1ZodnZ2by5vfuElDH2BqVne/a6k7ksl94KtBQWw5cSAyCv799u/Bjbob6eVg7MJAHL+cNy/IYVgwX82mcCU7SJKRXIMBYRc0HVrX/dvnUUcRFwJDHBB0ptGY5ncSnQZHpC4p6DqkpEwMZh4aa8ek27bGaRfxeeRXBysqkKo7OkVFbTXwhJlaOjeKxyseEQEm327IyAEkpHrRd2J8TUH2EhDcGzfksTy19MaSwEh4wbmcieysxVzaecb4ufXmNQCSK1pfv6lFxrg2HTDSLiIdr9+f3HxWBb1Wp2dnTvEwYo2jeHQ6ipUp+EUNTEhFB/ggb6HSG95iAhPWkpAPo5AL/pM9CKz+kLVf1e8ZOAuMSHWBmIqIBjY9Ujzc8vHQwyHDq/hBitF86IpYL9e4i8tnL9wkHe/OI8cnku75fePZRGALuMG8FqDO2lk76+qQmFPrwgGB+QWhbdaW+GT+hLt70+Ch3jKfXCOggCSvxE9mvNYA9DJAh106JOYCgj4IuuhF1UVcIAe5AggSZeJtPtdE3UkATgPsNkBoCPDlbTiW9VjYzcv3WyLh7ezEBjoAp2dB2SKsPGANMJzhfdakODYgzv7dwI/pwREO8ZMAIBctemWJTtT/sNMCXPxR5Ra0f4uxVhALC44s/5RU4QcRxQ5BUI+NCYlQd9t6dDrNbFpXF7ukFmrqF3gfsEFuFyIyv5tRhtkUa6SLrslMNAHcNDi/ETJA9BHhl6RCSTsnXlI/nXKcSpQ6rgTvShadfOnZChPiIQpWhoTG/PrYy0gBNNyDVdWDjDQ5FuXOcVtpbGF91r5gj0t7FaEIyfREItStqCwF48LWZS2eB6QHbyyD/Jma4Sy1urUDK4j8LcrKSm5JliIrwiLQiocpxwH5yjbHUPpOQznOVfW+AaBYUqKvYDsPhkdvWjoUbgyzASZtkCTXSxRYBL1mB6JAAeJTSN/IwSguxwfz+uIcCXirRbZpIagrjULNjtWvyU914ae3MOmcY/JVXAE5Av8VUxaquFaSbMI+0p71cBIAyzmAsIjwnyReBuRvnTnCtIs75S13j7jb+RRqwfQ+BcJCQlCFoVHZJOICE9a/urLvI58S7rsnVdJT5cPiP2byQUHcK0KHhJY10LyAdD4l0JgwBEQrUxg3x3oGHOLpavqNFaYxAGewVosKfYCoupSIQYK6VC8fl13//jeMDQxz54lPoIsyhkwAYQqSgdUEDdNTk5P79/ffDgtjQQGpAhHr7xYkVAN9lrpRLFaXOxB1hoiGuIePo58k/fTKVcraPjc53+dKdD9KIa7ogMAgSQWA0LQObWxNHxORJQJ+7D8JJjpSEQyoTxpnUloeuxdFpDGTVIF8XAamduBz9MGkCm28cJtu7+qFFTdIJng7ONZixQfiPVGkg/OgOwuYw4qpK5HoBclcM7+hnJtA05WNbEYEHFA1J2rCGa1lzIv6KoMRENmi1h0n8unvRa9kY7up4SFEra1EOEoHh8vhLvHpbbO4R07bmRfHeyqxDwSDoVmEJL0Aazj+TQC+ghEOLCNdwVE+5WgCzOLMqEyXBhTD+z2WEI7bLYtMzYDon10wGEVIZepzJZEcZh9EFW3paWFd7+JS7VLGBBfgM++7CUjtU1nLxASG4tG//2xsUKIXMRLQbGdwP32j4bDpUA+BHEfoTpy7ckTnrT4hMgfiSsgvNFSL7k2etHyhFG/YYolot6wLUYDon1aE9X8XJnDzIbGxNU20MUq8RGEalpbf5Tm516B4OTjyOT+26RvfKs66zL0dIlilY0JcUQYDoLQMzvLsxZV9hK66j4sKOATYp3rL/eBL9pZxC7ozA3htzvihlgNiLb7eDSTVNOA0GF+jvnEeEPyWjDt2rUUoHGEJsSOjm5eRxYuEFv8NkEaEZFCvBGoAmb3Dl7f2XVlpH9zOBzeywv77EoFFOjwRq5tBe6XPxF3QDCui3nIsHs/KvX2ltdQ/k+A5oX/bpkWsx/Tucu2OBdcGeaeF2XJJGz8M1DF+TyS7Dkjzc+Bqb179y6d2YkHWyyNhAEyxTxynU+I6LWqqqZoZA9WYCApgd4Zpa2vXtZFOW86j2eGVc5UfVXd+saenGI4IFr5Ecv83DqImPcpMoJ0rfiEbibgWnRDDKyR+TnNI2dJcHr64u3DRAytFhEZHobcLyZE0l8OhadK+/bOzgZTB+bn9yFrodfibyQiICZ3x+e2aZWGfD7dpkkatu0x/hXLAaFHwhw3KmYBmpWthWGughsYYdMaIctzSJqfJzQRoWfh7sE7tGlsBjjIPyY0wC9h+XtjJ5mpwf88HF7t68PFanFRgIOu8Zn9+fO6qJgMRx51oRfNb3Tm+Ib/cU1MB0QrPy5nMKaiF8V20UJG/dNe02/L/GNjIukvn2sNiIg8hr4b2Apn+cg+vYUUsS1ofPzwMCbEnbiP9FeNhgQWBfZ2wgD9wRCfEB/WRT2m6Y4ZyYFejNhXy2mez/dHtRj/lB8x1J6e2UOy2/wc35BBaiMRevI9rYEfXxBZwesF65JnrfYUkg6CUuhYVlbhzXh5Q4S8VuWVys2E++WlvWJlhbRl0f3eezIUJSAmnVsiLZ17FN86BxN8W6bF/OdTUveVjGQFvShXRIrxOYgZ23CdIwFw/kYI5NxErLeFszlnCYtykZf2tLTi+/yNkOBZm7CtJSB21WhVeGp1L++1gngjPSU9D0p491u33unGIuS60YsqMsBk6oovNkBANO03v7O1gVzqTbqlLCuTGsPutzGpPrG+Fm9E0BCXO+LiBFX3gqCzz835i8fGCyEKOJyR0Yt5hHC/2KKE987MzARXVlLnByZINj56QHb/yefMSU6gA3Nz7uXXR7UN8Sk/cpQWRIZrNtElNlvB0zVs+2smYZwBxA4kn5Gst7i4hZwccMXpjUAWpVp0v9g0ZvRmD+4E7HekPxSaCk3N/IVOiIup+3p6tm59UrcOJsOw6DpOfr0cW3Wb/CWRdLz/KNM2yueLP6h7LYd9rS4A0My8YGONQnWk1pOcTPwlL3HFCfjAu9+UFEKi4GAFyQfooqC0d+VWjlyRZ3Y+jsyChkga5dEDon3AmG6PHcxxKxCMFj1yot84AeE/yc8/tNd0roJuLxp5YafLA0XknEf6qDUtd3fHobLzNzJdlHL7Ytqc/34xwX6FTRSwKF25REOsmipd7SNo/OIAFfZ1AoJpxDITEDcSw6ojyvjK1CJfo22oT/lnxw644YyGvRo2rAt2CzVbMCRKXmsl+givI0+fAq51Z5LI01Ay5d1vIeaR+E5sGrOzc7tyCYuCXisdykGLi5Cgq1t/K22XCQuQbIsYGTbbyDIKP6ptuM9vP/v1SZ3JrYSDQmJmCCZcC5KATXsNAWaQLhO64zrO5yzkABzEs1bzlubmNEBRSIIuIyMD+suDXTxtVcJ9hOxHglj9pk7M161/J3DCGG35LF0tbbq5Rdk4RT0yKh99fPzYh2U1qh+6Mh6j+0UZ4aXdQ0I1vLIvN5GYE0mAAxq/ZY5shMdpi5IBT04omeaOYBwZLV2FuTMJDMzPn3jH5YYp532maBA7YX1WqFiZ9n5/PtmV78GECGj846ZugEwPCgMcmA1Cgi4LAgN8Zu/ckYEJEbLx/ZtDiEjfXux+UwdST7z7luYUuo0gHjEHiOa9D0h9fu05MDMwIS574zqE3G/Rnfb228Js8FYWLlZtmBB5p5V9HWq/cNuGvgCf2bH6PfHO66azuWAOWIyu7lf0jdZl/VcB4Xkr3xPwSD+YhI4O4TV4hyx6hAb4fUBR8EYwj1ylAbF/lM/sYbhYIWu9MyDaL2X5YPbu08dU+LuVsBCe9z4gjY1QaQx4UEeo1+qO+wGOREWTRRfbm8lLAlddmG1j9QsDSNqikFDNDInLvvuFaNrvD8iGQm3AmS1ArKuz0/8DAl5yfSCA5vcXCQle3mz9cB51BBLgso7wQlIYD78Vmg/FfYSHhOBaiMiJn9u2lekOSQF7HrR47IaxkXZZ/8OnRpCXluDrTGd2r6kTCvoIgA9z/rRbYzxrXY6/BJDpMIkCjoyMVI6GRsOrYLPP/lxAtPKTplWTvOq6gLAmW5VHreZ9DwiJOT2q/0971/caZXaGjcnM+WbCNI75ISNxCAgLoVkto6jBSLJbUzv6f/YAAAynSURBVL1QvPOq2ptcLLV33YvCCkvdi/YfGOabiZOZ/JiY7JBoMSxIt4TcrAuiJIQmuUgv9MIJZJkETAJBwZ7nPd+P840pVfvN2Nb3ucrdF+bhnPfHed/nwfISrYrTrWV5n8cbaTioECHTpIfjFNk/nVXZLzkr0IvVX6//+++0VmzY77UFRtfYR39CYJq0SS5W0eLEdoCUaqanVRNlWNkh2jbCcK0loRrKfg+h9/vd6U9OnfrLWxCy71c9eghxO6HCu5fHV5apVmVIxx/NeCXmRIp7tPS2PDrS3l6AdJCqR+5Bp/EuxJzIMPQfL/5+6mdvQ8i+G1edNXqjYp/boYqzrH09ndi5DG2m0Y3fDWfJabtlhpze6mE/AmPnhdVIRBaIMtcaR+v3hwcP5iCLclKeEfiKfXL97b71px7D0fA17Dajo/Hw//Ue8t44T/vslrgs9AW2tnFIptfykpHe4frFpcbRZcq1Oh4dJCVTzKLcIyF/K/t98eItCdl3olVvv2fclSptaOijPyFJy509FYyRBCKOyE8kryVTLbjqwultNOJ428kKcb5JhhH4in1/6CQ5vQ28fTf6qr6Dawil8UDPnEpwigkxktYZ2UyVUqXd6FZ2a0e96pICOJ7ZpxpJpLwQeTL5mAQGkGs1ywpRnhFsWH038A4fvNGVdH0nxZuPVx89ITSmQqsyQcgvF4thWbMHBuGjBrnfIZqMb1RW2/CjP7J/HIGkSWa/0M388ce/HT59/Z0+eaHbdRLwGB4m/8dHSX2KIXg2oeGg9CsSPJuYyELdraEFo/Ftz5TbSuPZhdXV1UjhMVKtI/P772FeCyX7/ZMnD58eeMeP3uhO2rJGlWps4qMvDIWwVi4lI5uQQCQxJ9Tst5FrbcBHTUZ2eUY+GylEnqr9EYxrNTU1z/1iDhXi4YF3/uzxL78gQp4b2l4kRXaOIbZO45jaVsitF3eLAbJRa4BsPEX2xak4wggWQx9BFmWelhVm1Ujj/ZMD7/PlW9d6XFcaN9HiLMvaGTfNA6Gx4KtgItFH7ux4sZpZy5c38r2kwTF1FvJahUjHwadqDxHm7A/m5kDJwHt+/PJXXZ7nET4hFNQtURQq2UOO2u82ci04veWpG7+0GB8dbV+IRDoKjyaVs8IPTSSLcuj+/YH3//6Jo603z9muIzgxfEIctwWz8056jNSmc7tbWSUdRNbnG1hnH56C2cUq4sgZWIbSAB3Ufu8e+n7gP/wnbvV/dbHrjzRXJzjLst6OcERgs03qbrFoNBwI70DyAeaPVI4soveLQeyOp48nD06O74fZBeJI86EBn/6Z3x+/cPQyE+KMqtGtRcJVud1i1Haxmqa+FvxgkP2OYHsalDw8Mj/fdG92trl5bm5gH8O/GAJZREvFyrR9ttFEUQaptxtaZsqyQiS13/gimT9GlHDmw3lMmcrIfpcJ8fmE0KKPFdrHZK4F88fdiTA2Q3+iQWzLIRVzD+R1EXn06Mnk+JFxqKJ8OtvMhPhIiCNuTBONkHxAzQ5fj76czLUwGT8Dq8G2tl5SfMCq7uoqLYaS5gO2FX7Nv6O/dUjGlXOCkukYxJxg4bo7ESCzi0HkWmoQO473EagCPoUm4EPqxs8yIT5fWbouuGTk61AoFEzELqXwhpjFROPaWpnmtSDmtHy2ndYQOw5CgJnOCBPi5wnxSE4rLTFKfhMy+e1DHLkdGGwYbMmXyQs8Hp9qbFQ6/nhnJwU6JqQaV5bbwjDp2kqnXpUwizKRDew0YKSxrpwfyvcO18cXR6fQ1ip0dNDkw/y33zIhvl5Zhi6NkiSVJPR+aRSFFkMDFNlb8lixom58fHR0ZAHu7NgfkSU7E+Ifulx9LUueHRqatD6SgihgNGcthjastbRYdpzxRdszyVqxYkJ8JUSoaUKPp5KM7KpCzPUVEdjJ/aYF5Uhvff3KEtwQF4iRM5OPx48wIf6hW9sx055UBdmjqlmUCVqxCuCMoPX7bEUeEZqg+0wyAherSSbER0Isz8oKaTclMBAKpoLrqZhkhGbjYb5Xth51l89iebqwWjgjIzsT4h9aNfsb7wi0OWZay9O7uXB4OwBfu7WZfF0bZlHq41MgZCRSgNovE+IfvnzDg0RTxIbYdCoVW8fgwxb2Qul9hOZ+STfz7AhEyp88ZUL8Q78zfyO0sVua7DTJnzK4mVpfh7NCeEcW7WuD0+W6DZn9xpW8FnXjnzAh/kG3rBSeIeikKWB2ISlJy1srGia5Xxjb1ZHTGxZ6yH1EplpMiI84JypUdQ3nzODWGguFyFU3ijNCemcy+bVvranRKbwhFn7LP6N/+EJ3F7NvLdJVkreYgIfrWIi2FSYmJsI78N5bm6lrU87TEHNqXxiJMCE+FyJ7KqPQC4nycIVnUgl+MIHsbcw01s1s1LX14lWXlINGmBAfceUNux6PNh+5WIWg0hiTyW8WEnTy1sI7O5SD6hcbZUHChPiJCyRgTGKtSi9eeHSUXoo7d5SYE1x1w9kASQfNQF8gvzJUvzS8tNy+wIT4iBPnjEqzbUPfk31pJpH9poKpBPxgsKlLzufTbbJmH16Zii9NLTMhfqKrUnFEbcvac7emPCNkdgExp0u7YcsNca0lX0Y3XhYky0yIr/g8uYc/jLzFXO1feUSwqks+g5B8gEZ5w9p0fgN2iKhHmBA/cdTSITE0cxXDE0fMTjj0pIPyzopFd8kxFIdkZrqOKsT4EhPib2nobidrxnYU6W3bWkyZhhBHsD4SDsN5umENFj35Z70r9XxC/MVF3fPRfV/PVMjGI46kSqVSX5H8KVEgTpfr6IgwIX7fWU5Uz9i+oZWCulD7xfJ0IlaShIS3b+8oHf/yxtDQym/4R6zCnaV5F+zho0az8V+HgkHanaZXXQxiY1U3P8SE+ItrSc15XngE+ITW+zWV4kOidCmnXHUx+QA/mGdMiP/Fuqi8qYykxx2cVqxMeh6JoWbPkkGlcuhpY0J8xk0ntzKUErbhCleSaJJQgV0coHokESP95WwgizhSLtcxIT7jiqacJDwSomSA47y3k45/ejORWIc/5XZ2pyFA7yNMiO/9LEvTN2NY5jB76IvZDsIwFqOFni2V/crQzoT43j6hM/Hc0GauNY1E5Uxi0GKoCRerTej4o/dLNXvLIBNShSPiaFYJ10zX0bWyLSeMl5ISmmgsqdYvNeOZEP/RquwLRLLSZkXLgIU9Gh/CSGNpvSRvLSVUw4T4f0T+rITEXhuaIqVh7YIKjxELme/JSyuBHaswrVgxIVWIIp4ChG6vjO3DqQmBC2GNoshTEiMbKwhnMiHVOCKO3Ihj86Y8+DKVFq9qoUdGdhSIxaiM7L/j368atYjHPM3QrQc9huiGMDvRaHyVJoGBbDQbYEKqgS5XGF9PeXXHFaE8+aCKYsozojTKZT3ChFQDlw037xVGsmKeMenykRTPBQYfaIAuVoxGmZDqgFxcXwv3bkoKYw/nD5X9mp1jmI1PpC719e0yIdWJ68c0G05DN/ISzsSvYUV8WY8cuEOS2LlUboIJqQ5uuW14Q2svJt+Yw0b6hTOSpnmtXJEJqVqmZQV04b2mMob7LoLCRCjBMxnYsauQyjEh1cLNyvZixvVdsdqLrkOlibZWejP9igmpXhg5b1iqJ1o4zzivVUJ4xulIOwjX1h/4l6sWjn+TtC1qvb4eGWvYwfBwQrIowTQTUj30vzbsEOJUiLrBmtA2dim0h8aCISakimhVbRPD7Z1kNH87O++1Li+T1kf4hFQVn2t5rkqvMs7DoWUubP9ly/0yIVVnxFb9y3jn5oRthyO0Z/axA0xIlW8tNLXcabmMpyh0Hq2c1KvT7ObfrNpnxHkTMZJ6JUJ9R8NeCbXkM80DTEgNInulQpD2VmJtvQkn7eIrq2aMaO13u71IvS5vZ55PSPUBQ2HDiSGG2140nPaicKyKmJBa1OzndT81p71oCLu9aBhO/5EJqQkjXVYnS7hzvnZ70S0bBV9ZNQ0kwppe/BftRSuwMCE1wq1jTjPecHaprNjhzpsKJqRmOHFRuNOL3vlSQ1uAY0Jqh8s97lSWp73oksRXVo3L9vPu9GLGSrf09iKfkFrjxlX9thJ2e1HrqDAhtc6Auw09q7L7WHbqZTAhtafkl3orCyw8R59RMCEfjpIrx5J6e9E1VOC090Ohvzuj5ktt2yqbEibkg8X3n3cJT3uRg/qHrxX7u89bLWBnAoIJ+dDxpP9a1zdCcNr733VUjl5p7e7q6jnHhDAYDAaDwWAwGAwGg8FgMBgMBoPBYDAYDAaDwWAwGAwGg8FgMBgMBoPBYDAYDAaDwWAwGAwG4yPDPwF87/QfIKxxvAAAAABJRU5ErkJggg==",
+            "module": "addComment",
+            "module_name": "Jira",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows":true,
+            "mac":true,
+            "docker":true
+        },
+        {
+            "en": {
                 "title": "Delete a ticket",
                 "description": "Allows you to delete a ticket in Jira",
                 "title_options": "Select Option",
                 "options":null
             },
             "es": {
-                "title": "Elimiar un ticket",
+                "title": "Eliminar un ticket",
                 "description": "Permite eliminar un ticket en Jira",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Eliminar um ticket",
+                "description": "Permite eliminar um ticket em Jira",
                 "title_options": "Seleccione una opción",
                 "options": null
             },
@@ -620,15 +862,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "MYP-1",
-                            "en": "MYP-1"
+                            "en": "MYP-1",
+                            "pr": "MYP-1"
                         },
                         "title": {
                             "es": "Id del ticket que se desea eliminar:",
-                            "en": "Id of the ticket to delete:"
+                            "en": "Id of the ticket to delete:",
+                            "pr": "Id do ticket que deseja eliminar:"
                         },
                         "description": {
                             "es": "Id del ticket a borrar:",
-                            "en": "Id if the ticket to erase:"
+                            "en": "Id if the ticket to erase:",
+                            "pr": "Id do ticket a eliminar:"
                         },
                         "id": "issueId",
                         "css": "col-md-6"
@@ -637,15 +882,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "conn1",
-                            "en": "conn1"
+                            "en": "conn1",
+                            "pr": "conn1"
                         },
                         "title": {
                             "es": "Sesion:",
-                            "en": "Session:"
+                            "en": "Session:",
+                            "pr": "Sessão:"
                         },
                         "description": {
                             "es": "Nombre de la sesion:",
-                            "en": "Name of the session:"
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
                         },
                         "id": "session",
                         "css": "col-md-6"
@@ -654,19 +902,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado a variável:"
                         },
                         "description": {
                             "es": "Variable donde guardar el resultado:",
-                            "en": "Variable where to store the result:"
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde guardar o resultado:"
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -700,6 +952,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Obter transições",
+                "description": "Obtém a lista de transições disponíveis de um ticket de Jira",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -707,15 +965,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "MYP-1",
-                            "en": "MYP-1"
+                            "en": "MYP-1",
+                            "pr": "MYP-1"
                         },
                         "title": {
                             "es": "Id del ticket que se saber las transiciones:",
-                            "en": "Id of the ticket to know its transitions:"
+                            "en": "Id of the ticket to know its transitions:",
+                            "pr": "Id do ticket que se saber as transições:"
                         },
                         "description": {
                             "es": "Id del ticket a examinar las transiciones:",
-                            "en": "Id if the ticket to examine for transitions:"
+                            "en": "Id if the ticket to examine for transitions:",
+                            "pr": "Id do ticket a examinar as transições:"
                         },
                         "id": "issueId",
                         "css": "col-md-6"
@@ -724,15 +985,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "conn1",
-                            "en": "conn1"
+                            "en": "conn1",
+                            "pr": "conn1"
                         },
                         "title": {
                             "es": "Sesion:",
-                            "en": "Session:"
+                            "en": "Session:",
+                            "pr": "Sessão:"
                         },
                         "description": {
                             "es": "Nombre de la sesion:",
-                            "en": "Name of the session:"
+                            "en": "Name of the session:",
+                            "pr": "Nome da sessão:"
                         },
                         "id": "session",
                         "css": "col-md-6"
@@ -741,19 +1005,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado a variável:"
                         },
                         "description": {
                             "es": "Variable donde guardar el resultado:",
-                            "en": "Variable where to store the result:"
+                            "en": "Variable where to store the result:",
+                            "pr": "Variável onde guardar o resultado:"
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",

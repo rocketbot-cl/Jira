@@ -1,95 +1,105 @@
-
-
-
-
 # Jira
+  
+Interact with the Jira's ecosystem.  
 
-Interactúa con el ecosistema de Jira. Puedes crear, leer, modificar y eliminar tickets, moverlos hacia las columnas que necesites, todo a tu voluntad.
+*Read this in other languages: [English](Manual_Jira.md), [Português](Manual_Jira.pr.md), [Español](Manual_Jira.es.md)*
   
 ![banner](imgs/Banner_Jira.png)
-## Como instalar este módulo
+## How to install this module
   
-__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
+To install the module in Rocketbot Studio, it can be done in two ways:
+1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
+
+## How to use this module
+
+In order to use this module you need a Jira's account and an API Token (Profile -> Account options -> Security -> API Token).
 
 
-## Como usar este modulo
-Para usar este modulo se requiere una cuenta con Jira y activar un API Token (Perfil -> Opciones de cuenta ->
-Seguridad -> API Token).
 
+## Description of the commands
 
-## Descripción de los comandos
-
-### Conectar a Jira
+### Connects to Jira
   
-Conectar tu cuenta de Jira
-|Parámetros|Descripción|ejemplo|
+Enable the conection to Jira
+|Parameters|Description|example|
 | --- | --- | --- |
-|Servidor|Servidor en la que se encuentran nuestros proyectos|https://myserver.atlassian.net|
-|Email|Mail registrado en el proyecto|ejemplo@rocketbot.com|
-|API Token|Token obtenido desde Jira|oEl0pUox6GC1lxzJ0AgGPRos|
-|Sesion|Nombre de la sesion|conn1|
-|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Server|Server which our projects are hosted|https://myserver.atlassian.net|
+|Email|Mail registered in the project|example@rocketbot.com|
+|API Token|Token obtained from Jira|oEl0pUox6GC1lxzJ0AgGPRos|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
 
-### Obtener proyectos
+### Obtain projects
   
-Obtiene la lista de proyectos de Jira
-|Parámetros|Descripción|ejemplo|
+Obtains the list of projects from Jira
+|Parameters|Description|example|
 | --- | --- | --- |
-|Sesion|Nombre de la sesion|conn1|
-|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
 
-### Obtener tickets
+### Obtain tickets
   
-Obtiene la lista de tickets de Jira
-|Parámetros|Descripción|ejemplo|
+Obtains the list of tickets from Jira
+|Parameters|Description|example|
 | --- | --- | --- |
-|Filtros (en formato JQL)|Query con filtros|project=PROJ|
-|Sesion|Nombre de la sesion|conn1|
-|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Filters (in JQL format)|Query with filters|project=PROJ|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
 
-### Crear un ticket
+### Create a ticket
   
-Crea un ticket en Jira
-|Parámetros|Descripción|ejemplo|
+Creates a ticket in Jira
+|Parameters|Description|example|
 | --- | --- | --- |
-|Diccionario con valores del ticket|Diccionario con los valores que requiere el ticket|{'project' : {'id' : 10000}, 'summary': 'titulo del ticket', 'issuetype':'Task'}|
-|Sesion|Nombre de la sesion|conn1|
-|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Dictionary with parameters of the ticket|Dictionary with values that the ticket needs|{'project' : {'id' : 10000}, 'summary': 'title of the ticket', 'issuetype':'Task'}|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
 
-### Mover un ticket
+### Move a ticket
   
-Mueve un ticket desde una columna a otra
-|Parámetros|Descripción|ejemplo|
+Moves a ticket from one column to another
+|Parameters|Description|example|
 | --- | --- | --- |
-|Id del ticket que se desea mover|Id del ticket a mover|MYP-1|
-|Columna a la que se desea mover|Columna en la cual se requiere el ticket|In Progress|
-|Sesion|Nombre de la sesion|conn1|
-|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Id of the ticket to move|Id if the ticket to change its column|MYP-1|
+|Column where to move it|Column in which the thicket is requiered|In Progress|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
 
-### Editar un ticket
+### Update a ticket
   
-Permite editar un ticket en Jira
-|Parámetros|Descripción|ejemplo|
+Allows you to update a ticket in Jira
+|Parameters|Description|example|
 | --- | --- | --- |
-|Id del ticket que se desea editar|Id del ticket a editar|MYP-1|
-|Diccionario con valores del ticket|Diccionario con los valores que se requiere cambiar en el ticket|{'summary': 'titulo del ticket'}|
-|Sesion|Nombre de la sesion|conn1|
-|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Id of the ticket to edit|Id if the ticket to change its values|MYP-1|
+|Dictionary with parameters of the ticket|Dictionary with values that the ticket needs to change|{'summary': 'title of the ticket'}|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
 
-### Elimiar un ticket
+### Add comment to a ticket
   
-Permite eliminar un ticket en Jira
-|Parámetros|Descripción|ejemplo|
+Allows to add a comment to a ticket in Jira
+|Parameters|Description|example|
 | --- | --- | --- |
-|Id del ticket que se desea eliminar|Id del ticket a borrar|MYP-1|
-|Sesion|Nombre de la sesion|conn1|
-|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Id of the ticket to comment|Id of the ticket to which you want to add a comment|MYP-1|
+|Session|Name of the session|conn1|
+|Comment|Comment to add to the ticket|This is a comment|
+|Assign result to variable|Variable where to store the result|Variable|
 
-### Obtener transiciones
+### Delete a ticket
   
-Obtiene la lista de transiciones disponibles de un ticket de Jira
-|Parámetros|Descripción|ejemplo|
+Allows you to delete a ticket in Jira
+|Parameters|Description|example|
 | --- | --- | --- |
-|Id del ticket que se saber las transiciones|Id del ticket a examinar las transiciones|MYP-1|
-|Sesion|Nombre de la sesion|conn1|
-|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Id of the ticket to delete|Id if the ticket to erase|MYP-1|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
+
+### Obtain transitions
+  
+Obtains the list of transitions availables of a ticket from Jira
+|Parameters|Description|example|
+| --- | --- | --- |
+|Id of the ticket to know its transitions|Id if the ticket to examine for transitions|MYP-1|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
