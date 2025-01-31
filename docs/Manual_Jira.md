@@ -1,3 +1,7 @@
+
+
+
+
 # Jira
   
 Interact with the Jira's ecosystem.  
@@ -14,7 +18,6 @@ To install the module in Rocketbot Studio, it can be done in two ways:
 ## How to use this module
 
 In order to use this module you need a Jira's account and an API Token (Profile -> Account options -> Security -> API Token).
-
 
 
 ## Description of the commands
@@ -101,5 +104,15 @@ Obtains the list of transitions availables of a ticket from Jira
 |Parameters|Description|example|
 | --- | --- | --- |
 |Id of the ticket to know its transitions|Id if the ticket to examine for transitions|MYP-1|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
+
+### Download attachments
+  
+Download the attachments of a ticket from Jira
+|Parameters|Description|example|
+| --- | --- | --- |
+|Id of the ticket|Id of the ticket to download the attachments|MYP-1|
+|Download path|Path where the attachments will be downloaded|/Users/user/Desktop|
 |Session|Name of the session|conn1|
 |Assign result to variable|Variable where to store the result|Variable|

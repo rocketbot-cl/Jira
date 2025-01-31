@@ -226,6 +226,31 @@ try:
 
         SetVar(whereToStore, arrayAux)
 
+    if module == "downloadAttachments":
+        ticket_id = GetParams("id")
+        session = GetParams("session")
+        download_path = GetParams("path")
+        whereToStore = GetParams("whereToStore")
+
+        if not session:
+            session = "default"
+        issue = jiraSessions[session].issue(ticket_id)
+        try:
+            attachments = issue.fields.attachment
+            if attachments:
+                for attachment in attachments:
+                    file_path = os.path.join(download_path, attachment.filename)
+                    with open(file_path, 'wb') as file:
+                        file.write(attachment.get())
+            else:
+                print("No attachments found in the ticket.")
+            
+            SetVar(whereToStore, True)
+        except Exception as e:
+            SetVar(whereToStore, False)
+            print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
+            PrintException()
+            raise e
 except Exception as e:
     print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
     PrintException()

@@ -1,3 +1,7 @@
+
+
+
+
 # Jira
   
 Interact with the Jira's ecosystem.  
@@ -39,7 +43,10 @@ Allows to add a comment to a ticket in Jira
 Allows you to delete a ticket in Jira
 
 9. Obtain transitions  
-Obtains the list of transitions availables of a ticket from Jira  
+Obtains the list of transitions availables of a ticket from Jira
+
+10. Download attachments  
+Download the attachments of a ticket from Jira  
 
 
 

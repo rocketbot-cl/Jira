@@ -1,3 +1,7 @@
+
+
+
+
 # Jira
   
 Interaja com o ecossistema Jira.  
@@ -9,13 +13,14 @@ Interaja com o ecossistema Jira.
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
-2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar. 
+2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.  
+
+
+
 
 ## Como usar este modulo
 
 Para usar esse módulo, você precisa ter uma conta no Jira e ativar um token de API (Profile -> Account Options -> Security -> API Token).
-
-
 ## Descrição do comando
 
 ### Conectar-se ao Jira
@@ -100,5 +105,15 @@ Obtém a lista de transições disponíveis de um ticket de Jira
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Id do ticket que se saber as transições|Id do ticket a examinar as transições|MYP-1|
+|Sessão|Nome da sessão|conn1|
+|Atribuir resultado a variável|Variável onde guardar o resultado|Variável|
+
+### Download attachments
+  
+Download the attachments de um ticket de Jira
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Id do ticket|Id do ticket a baixar os arquivos adjuntos|MYP-1|
+|Caminho de download|Caminho onde os arquivos adjuntos serão baixados|/Users/user/Desktop|
 |Sessão|Nome da sessão|conn1|
 |Atribuir resultado a variável|Variável onde guardar o resultado|Variável|
