@@ -88,15 +88,32 @@ try:
         jql = GetParams("jql")
         session = GetParams("session")
         whereToStore = GetParams("whereToStore")
-
+        max_results = GetParams("maxResults")
+        start_at = GetParams("startAt")
         if not session:
             session = "default"
         
         issues_in_proj = jiraSessions[session].search_issues(jql)
-
         arrayAux = []
 
-        print(issues_in_proj)
+        if max_results and max_results.isdigit():
+            max_results = int(max_results)
+            if start_at and start_at.isdigit():
+                start_at = int(start_at)
+            else:
+                start_at = 0
+            issues_in_proj = jiraSessions[session].search_issues(jql, startAt=start_at, maxResults=max_results)
+        else:
+            issues_in_proj = []
+            startAt = 0
+            maxResults = 100
+            while True:
+                batch = jiraSessions[session].search_issues(jql, startAt=startAt, maxResults=max_results)
+                if not batch:
+                    break
+                issues_in_proj.extend(batch)
+                startAt += len(batch)
+
         for issue in issues_in_proj:
             print(issue.__str__())
             f = {

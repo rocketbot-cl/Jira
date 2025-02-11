@@ -7,7 +7,7 @@
         "pr": "Interaja com o ecossistema Jira."
     },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"1.2.0",
+    "version":"1.2.1",
     "license": "MIT",
     "homepage":"http://rocketbot.com/",
     "linux": true,
@@ -296,6 +296,46 @@
                             "pr": "Deixe em branco se não forem necessários filtros:"
                         },
                         "id": "jql",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "all",
+                            "en": "all",
+                            "pr": "all"
+                        },
+                        "title": {
+                            "es": "Número de resultados:",
+                            "en": "Number of results:",
+                            "pr": "Número de resultados:"
+                        },
+                        "description": {
+                            "es": "Maximo numero de tickets a obtener. Por defecto trae todos.",
+                            "en": "Maximum number of tickets to obtain. By default it brings all.",
+                            "pr": "Número máximo de bilhetes a obter. Por padrão, ele traz tudo."
+                        },
+                        "id": "maxResults",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "0",
+                            "en": "0",
+                            "pr": "0"
+                        },
+                        "title": {
+                            "es": "Empezar desde:",
+                            "en": "Start at:",
+                            "pr": "Começar de:"
+                        },
+                        "description": {
+                            "es": "Número de ticket desde el cual empezar a obtener los resultados. Útil para paginar. Ej: si startAt = 100 y maxResults = 50, se obtendrán los tickets del 101 al 150",
+                            "en": "Ticket number from which to start getting results. Useful for pagination. Ex: if startAt = 100 and maxResults = 50, tickets 101 to 150 will be returned.",
+                            "pr": "Número do bilhete a partir do qual começar a obter resultados. Útil para paginação. Ex: se startAt = 100 e maxResults = 50, serão obtidos os tickets 101 a 150"
+                        },
+                        "id": "startAt",
                         "css": "col-md-6"
                     },
                     {
