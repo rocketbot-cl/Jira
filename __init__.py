@@ -200,7 +200,8 @@ try:
             
             jira_ = jiraSessions[session]
 
-            jira_.add_comment(issueId, comment)
+            comment_str = str(comment).strip()
+            jira_.add_comment(issueId, comment_str)
 
             SetVar(whereToStore, True)
         except Exception as e:
