@@ -1,27 +1,29 @@
-#!/usr/bin/env python
-"""
-This module allows people to keep their jira server credentials outside their script, in a configuration file that is not saved in the source control.
+"""Config handler.
+
+This module allows people to keep their jira server credentials outside their script,
+in a configuration file that is not saved in the source control.
 
 Also, this simplifies the scripts by not having to write the same initialization code for each script.
-
 """
+
+from __future__ import annotations
+
 import configparser
 import logging
 import os
 import sys
-from typing import Optional
 
 from jira.client import JIRA
 
 
 def get_jira(
-    profile: Optional[str] = None,
+    profile: str | None = None,
     url: str = "http://localhost:2990",
     username: str = "admin",
     password: str = "admin",
     appid=None,
     autofix=False,
-    verify: bool = True,
+    verify: bool | str = True,
 ):
     """Return a JIRA object by loading the connection details from the `config.ini` file.
 
@@ -32,7 +34,8 @@ def get_jira(
         password (str): password to use for authentication
         appid: appid
         autofix: autofix
-        verify (bool): boolean indicating whether SSL certificates should be verified
+        verify (Union[bool, str]): True to indicate whether SSL certificates should be verified or
+            str path to a CA_BUNDLE file or directory with certificates of trusted CAs. (Default: ``True``)
 
     Returns:
         JIRA: an instance to a JIRA object.
@@ -73,13 +76,18 @@ def get_jira(
                 return possible
         return None
 
+    if isinstance(verify, bool):
+        verify = "yes" if verify else "no"
+    else:
+        verify = verify
+
     config = configparser.ConfigParser(
         defaults={
             "user": None,
             "pass": None,
             "appid": appid,
             "autofix": autofix,
-            "verify": "yes" if verify else "no",
+            "verify": verify,
         },
         allow_no_value=True,
     )
@@ -104,12 +112,13 @@ def get_jira(
             password = config.get(profile, "pass")
             appid = config.get(profile, "appid")
             autofix = config.get(profile, "autofix")
-            verify = config.getboolean(profile, "verify")
-
+            try:
+                verify = config.getboolean(profile, "verify")
+            except ValueError:
+                verify = config.get(profile, "verify")
         else:
             raise OSError(
-                "%s was not able to locate the config.ini file in current directory, user home directory or PYTHONPATH."
-                % __name__
+                f"{__name__} was not able to locate the config.ini file in current directory, user home directory or PYTHONPATH."
             )
 
     options = JIRA.DEFAULT_OPTIONS

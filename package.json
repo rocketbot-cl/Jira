@@ -7,7 +7,7 @@
         "pr": "Interaja com o ecossistema Jira."
     },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"1.2.2",
+    "version":"2.2.2",
     "license": "MIT",
     "homepage":"http://rocketbot.com/",
     "linux": true,
@@ -16,7 +16,7 @@
     "docker":true,
     "name": "Jira",
     "dependencies": {
-        "jira": "3.1.1"
+        "jira": "3.10.5"
     },
     "title": {
         "en": "Jira",
@@ -291,9 +291,9 @@
                             "pr": "Consulta com filtros:"
                         },
                         "help": {
-                            "es": "Dejarlo en blanco si no se requieren filtros:",
-                            "en": "Leave it empty if filters are not required:",
-                            "pr": "Deixe em branco se não forem necessários filtros:"
+                            "es": "Dejarlo en blanco si no se requieren filtros",
+                            "en": "Leave it empty if filters are not required",
+                            "pr": "Deixe em branco se não forem necessários filtros"
                         },
                         "id": "jql",
                         "css": "col-md-6"
@@ -321,21 +321,21 @@
                     {
                         "type": "input",
                         "placeholder": {
-                            "es": "0",
-                            "en": "0",
-                            "pr": "0"
+                            "es": "",
+                            "en": "",
+                            "pr": ""
                         },
                         "title": {
-                            "es": "Empezar desde:",
-                            "en": "Start at:",
-                            "pr": "Começar de:"
+                            "es": "Token de Paginación:",
+                            "en": "Pagination Token:",
+                            "pr": "Token de paginação:"
                         },
                         "description": {
-                            "es": "Número de ticket desde el cual empezar a obtener los resultados. Útil para paginar. Ej: si startAt = 100 y maxResults = 50, se obtendrán los tickets del 101 al 150",
-                            "en": "Ticket number from which to start getting results. Useful for pagination. Ex: if startAt = 100 and maxResults = 50, tickets 101 to 150 will be returned.",
-                            "pr": "Número do bilhete a partir do qual começar a obter resultados. Útil para paginação. Ex: se startAt = 100 e maxResults = 50, serão obtidos os tickets 101 a 150"
+                            "es": "Opcional. Token devuelto la primera vez ejeutado el comando usado para paginar resultados",
+                            "en": "Optional. Token returned the first time the command used to paginate results is executed.",
+                            "pr": "Opcional. Token retornado na primeira vez que o comando usado para paginar os resultados é executado."
                         },
-                        "id": "startAt",
+                        "id": "nextToken",
                         "css": "col-md-6"
                     },
                     {
@@ -382,6 +382,32 @@
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable ",
+                            "pr": "Variável"
+                        },
+                        "title": {
+                            "es": "Obtener token de paginación en variable:",
+                            "en": "Get pagination token in variable:",
+                            "pr": "Obter token de paginação na variável:"
+                        },
+                        "description": {
+                            "es": "Variable donde guardar el token para paginar resultados en próxima ejecución",
+                            "en": "Variable where to save the token to paginate results in the next execution",
+                            "pr": "Variável onde salvar o token para paginar os resultados na próxima execução"
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars" : true,
+                        "id": "whereToStoreToken",
                         "css": "col-md-6"
                     }
                 ]

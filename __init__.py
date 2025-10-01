@@ -35,7 +35,7 @@ if cur_path not in sys.path:
 from jira import JIRA
 from jira.client import ResultList
 from jira.resources import Issue
-
+import re
 global jiraSessions
 
 SESSION_DEFAULT = "default"
@@ -57,8 +57,13 @@ try:
         resultConnection = False
         if not session:
             session = "default"
+        options = {
+            "server": server,
+            "rest_api_version": "3"
+        }
+        jiraSessions[session] = JIRA(options=options, basic_auth=(email, apiToken))
+        # jiraSessions[session] = JIRA(server=server, basic_auth=(email, apiToken))
 
-        jiraSessions[session] = JIRA(server=server, basic_auth=(email, apiToken))
         if jiraSessions[session]:
             resultConnection = True
         
@@ -89,49 +94,101 @@ try:
         session = GetParams("session")
         whereToStore = GetParams("whereToStore")
         max_results = GetParams("maxResults")
-        start_at = GetParams("startAt")
+        nextToken = GetParams("nextToken")
+        whereToStoreToken = GetParams("whereToStoreToken")
         if not session:
             session = "default"
-        
-        issues_in_proj = jiraSessions[session].search_issues(jql)
-        arrayAux = []
+        page_size = int(max_results) if (max_results and str(max_results).isdigit()) else 50
+        page_size = max(1, min(page_size, 100))
+        fields_list = ["summary", "issuetype", "description", "labels", "priority", "status", "assignee"]
+        try:                  
+            global to_text_safe
+            def to_text_safe(val):
+                if val is None:
+                    return None
+                if isinstance(val, bytes):
+                    return val.decode("utf-8", errors="replace")
+                return str(val)
+            global html_to_text
+            def html_to_text(html):
+                from html import unescape
+                if not html:
+                    return None
+                html = to_text_safe(html)
+                txt = unescape(html)
+                txt = re.sub(r"<br\s*/?>", "\n", txt, flags=re.I)
+                txt = re.sub(r"</p\s*>", "\n", txt, flags=re.I)
+                txt = re.sub(r"<style.*?>.*?</style>", "", txt, flags=re.I | re.S)
+                txt = re.sub(r"<script.*?>.*?</script>", "", txt, flags=re.I | re.S)
+                txt = re.sub(r"<[^>]+>", "", txt)
+                txt = txt.replace("\r\n", "\n").strip()
+                txt = txt.replace("\n", " ")
+                return txt or None
+            
+            cli = jiraSessions[session]
+            resp = cli.enhanced_search_issues(
+                jql_str=jql,
+                nextPageToken=(nextToken if nextToken else None),
+                maxResults=page_size,
+                fields=fields_list,
+                expand="renderedFields",
+                use_post=True
+            )
+            
+            next_token_out = getattr(resp, "nextPageToken", None)
+            arrayAux = []
 
-        if max_results and max_results.isdigit():
-            max_results = int(max_results)
-            if start_at and start_at.isdigit():
-                start_at = int(start_at)
-            else:
-                start_at = 0
-            issues_in_proj = jiraSessions[session].search_issues(jql, startAt=start_at, maxResults=max_results)
-        else:
-            issues_in_proj = []
-            startAt = 0
-            maxResults = 100
-            while True:
-                batch = jiraSessions[session].search_issues(jql, startAt=startAt, maxResults=max_results)
-                if not batch:
-                    break
-                issues_in_proj.extend(batch)
-                startAt += len(batch)
-
-        for issue in issues_in_proj:
-            print(issue.__str__())
-            f = {
-                'id': issue.__str__(),
-                'summary': issue.fields.summary,
-                'issuetype': issue.fields.issuetype.name,
-                'description': issue.fields.description,
-                'labels': issue.fields.labels,
-                'priority': issue.fields.priority.name,
-                'status': issue.fields.status.name
-            }
             try:
-                f['assignee'] = issue.fields.assignee.displayName
-            except:
-                f['assignee'] = "Not assigned"
-            arrayAux.append(f)
+                import sys
+                if hasattr(sys.stdout, "reconfigure"):
+                    sys.stdout.reconfigure(encoding="utf-8")
+            except Exception:
+                pass
+                
+            for issue in resp or []:
+                # print(issue.key)
+                rendered = (issue.raw.get("renderedFields", {}) or {}).get("description")
+                desc_text = html_to_text(rendered)
+                if not desc_text:
+                    v = getattr(issue.fields, "description", None)
+                    # si viene como PropertyHolder con .raw (ADF), convierte a texto simple
+                    if hasattr(v, "raw"):
+                        desc_text = to_text_safe(v.raw)
+                    elif isinstance(v, str):
+                        desc_text = to_text_safe(v)
+                    else:
+                        desc_text = None
+                f = {
+                    "id": issue.key,  # mejor clave humana
+                    "summary": to_text_safe(getattr(issue.fields, "summary", None)),
+                    "issuetype": to_text_safe(getattr(issue.fields.issuetype, "name", None)),
+                    "description": desc_text,
+                    "labels": list(getattr(issue.fields, "labels", []) or []),
+                    "priority": to_text_safe(getattr(getattr(issue.fields, "priority", None), "name", None)),
+                    "status": to_text_safe(getattr(getattr(issue.fields, "status", None), "name", None)),
+                    "assignee": to_text_safe(getattr(getattr(issue.fields, "assignee", None), "displayName", "Not assigned")),
+                }
+                try:
+                    f['assignee'] = issue.fields.assignee.displayName
+                except Exception:
+                    f['assignee'] = "Not assigned"
+                    
+                # try:
+                #     custom_field_10609 = issue.fields.customfield_10609
+                #     f['custom_field_10609'] = (custom_field_10609.value if hasattr(custom_field_10609, 'value') else (str(custom_field_10609) if custom_field_10609 is not None else "No data"))
+                # except AttributeError:
+                #     f['custom_field_10609'] = "No data"
+            
+                arrayAux.append(f)
 
-        SetVar(whereToStore, arrayAux)
+            SetVar(whereToStore, arrayAux)
+            if whereToStoreToken:
+                SetVar(whereToStoreToken, next_token_out)
+        except Exception as e:
+            SetVar(whereToStore, f"Error {e}")
+            PrintException()
+            import traceback
+            traceback.print_exc()
 
     if module == "moveTicket":
         issueId = GetParams("issueId")
