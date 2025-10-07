@@ -253,12 +253,30 @@ try:
 
         if not session:
             session = "default"
+        def text_to_adf(txt: str) -> dict:
+            import re
+            txt = (txt or "").replace("\r\n", "\n").strip()
+            if not txt:
+                # ADF no acepta vacío total: generamos un párrafo con hardBreak
+                return {"type":"doc","version":1,
+                        "content":[{"type":"paragraph","content":[{"type":"hardBreak"}]}]}
+            paragraphs = []
+            for para in re.split(r"\n\s*\n", txt):
+                lines = para.split("\n")
+                content = []
+                for i, seg in enumerate(lines):
+                    if seg:
+                        content.append({"type":"text","text":seg})
+                    if i < len(lines) - 1:
+                        content.append({"type":"hardBreak"})
+                paragraphs.append({"type":"paragraph", "content": content or [{"type":"hardBreak"}]})
+            return {"type":"doc","version":1,"content":paragraphs}
         try:
             
             jira_ = jiraSessions[session]
-
             comment_str = str(comment).strip()
-            jira_.add_comment(issueId, comment_str)
+            adf = text_to_adf(comment_str)
+            jira_.add_comment(issueId, adf)
 
             SetVar(whereToStore, True)
         except Exception as e:
