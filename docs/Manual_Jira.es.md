@@ -50,9 +50,10 @@ Obtiene la lista de tickets de Jira
 | --- | --- | --- |
 |Filtros (en formato JQL)|Query con filtros|project=PROJ|
 |Número de resultados|Maximo numero de tickets a obtener. Por defecto trae todos.|all|
-|Empezar desde|Número de ticket desde el cual empezar a obtener los resultados. Útil para paginar. Ej si startAt = 100 y maxResults = 50, se obtendrán los tickets del 101 al 150|0|
+|Token de Paginación|Opcional. Token devuelto la primera vez ejeutado el comando usado para paginar resultados||
 |Sesion|Nombre de la sesion|conn1|
 |Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+|Obtener token de paginación en variable|Variable donde guardar el token para paginar resultados en próxima ejecución|Variable|
 
 ### Crear un ticket
   

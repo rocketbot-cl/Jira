@@ -11,9 +11,13 @@ myId = 10000
 
 if __name__ == "__main__":
     try:
-        jira = JIRA(
+        options = {
+            "server": "https://justtesting5.atlassian.net",
+            "rest_api_version": "3"   # <-- forzar API v3
+        }
+        jira = JIRA(options=options,
         # jira = JIRA(server="https://jira.atlassian.com")
-        server="https://justtesting5.atlassian.net",
+        # server="https://justtesting5.atlassian.net",
         basic_auth=("calebcipra@outlook.com", "oEl0pUox6GC1lxzJ0AgG166B"),  # a username/password tuple [Not recommended]
         # basic_auth=("email", "API token"),  # Jira Cloud: a username/token tuple
         # token_auth="API token",  # Self-Hosted Jira (e.g. Server): the PAT token
