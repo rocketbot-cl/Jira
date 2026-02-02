@@ -51,6 +51,7 @@ Obtém a lista de tickets do Jira
 |Número de resultados|Número máximo de bilhetes a obter. Por padrão, ele traz tudo.|all|
 |Token de paginação|Opcional. Token retornado na primeira vez que o comando usado para paginar os resultados é executado.||
 |Sessão|Nome da sessão|conn1|
+|Campo personalizado|Campo personalizado para obter| customfield_10104|
 |Atribuir resultado à variável|Variável onde armazenar o resultado|Variável|
 |Obter token de paginação na variável|Variável onde salvar o token para paginar os resultados na próxima execução|Variável|
 

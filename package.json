@@ -7,7 +7,7 @@
         "pr": "Interaja com o ecossistema Jira."
     },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"2.2.3",
+    "version":"2.2.4",
     "license": "MIT",
     "homepage":"http://rocketbot.com/",
     "linux": true,
@@ -356,6 +356,26 @@
                             "pr": "Nome da sessão:"
                         },
                         "id": "session",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": " customfield_10104",
+                            "en": " customfield_10104",
+                            "pr": " customfield_10104"
+                        },
+                        "title": {
+                            "es": "Campo personalizado",
+                            "en": "Customfield:",
+                            "pr": "Campo personalizado"
+                        },
+                        "description": {
+                            "es": "Campo personalizado a obtener",
+                            "en": "Custom field to get:",
+                            "pr": "Campo personalizado para obter"
+                        },
+                        "id": "custom_field",
                         "css": "col-md-6"
                     },
                     {

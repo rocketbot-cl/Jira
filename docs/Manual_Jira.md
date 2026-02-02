@@ -50,6 +50,7 @@ Obtains the list of tickets from Jira
 |Number of results|Maximum number of tickets to obtain. By default it brings all.|all|
 |Pagination Token|Optional. Token returned the first time the command used to paginate results is executed.||
 |Session|Name of the session|conn1|
+|Customfield|Custom field to get| customfield_10104|
 |Assign result to variable|Variable where to store the result|Variable|
 |Get pagination token in variable|Variable where to save the token to paginate results in the next execution|Variable |
 

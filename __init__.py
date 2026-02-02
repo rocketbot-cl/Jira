@@ -93,14 +93,33 @@ try:
         jql = GetParams("jql")
         session = GetParams("session")
         whereToStore = GetParams("whereToStore")
-        max_results = GetParams("maxResults")
+        max_results = GetParams("max_results")
         nextToken = GetParams("nextToken")
         whereToStoreToken = GetParams("whereToStoreToken")
+        custom_field=GetParams("custom_field")
+
         if not session:
             session = "default"
         page_size = int(max_results) if (max_results and str(max_results).isdigit()) else 50
         page_size = max(1, min(page_size, 100))
-        fields_list = ["summary", "issuetype", "description", "labels", "priority", "status", "assignee"]
+        
+        
+        
+# Custom fields → lista
+        if custom_field:
+            custom_fields = [c.strip() for c in custom_field.split(",")]
+        else:
+            custom_fields = []
+
+        fields_list = ["summary", "issuetype", "description", "labels", "priority", "status", "assignee", "customfield_"]
+        
+        
+# Agregar custom fields a la petición
+        for cf in custom_fields:
+            if cf not in fields_list:
+                fields_list.append(cf)
+
+
         try:                  
             global to_text_safe
             def to_text_safe(val):
@@ -168,27 +187,44 @@ try:
                     "status": to_text_safe(getattr(getattr(issue.fields, "status", None), "name", None)),
                     "assignee": to_text_safe(getattr(getattr(issue.fields, "assignee", None), "displayName", "Not assigned")),
                 }
+                
                 try:
                     f['assignee'] = issue.fields.assignee.displayName
                 except Exception:
                     f['assignee'] = "Not assigned"
-                    
-                # try:
-                #     custom_field_10609 = issue.fields.customfield_10609
-                #     f['custom_field_10609'] = (custom_field_10609.value if hasattr(custom_field_10609, 'value') else (str(custom_field_10609) if custom_field_10609 is not None else "No data"))
-                # except AttributeError:
-                #     f['custom_field_10609'] = "No data"
-            
+
+                
+                
+                for cf in custom_fields:
+                    value = issue.raw.get("fields", {}).get(cf)
+
+                    if isinstance(value, list):
+                        f[cf] = ", ".join([
+                            str(v.get("value") or v.get("name") or v) 
+                            if isinstance(v, dict) else str(v) 
+                            for v in value
+                        ])
+                    elif isinstance(value, dict):
+                        f[cf] = (
+                            value.get("value")
+                            or value.get("name")
+                            or value.get("displayName")
+                            or value.get("id")
+                        )
+                    else:
+                        f[cf] = value
+
                 arrayAux.append(f)
+
 
             SetVar(whereToStore, arrayAux)
             if whereToStoreToken:
                 SetVar(whereToStoreToken, next_token_out)
         except Exception as e:
-            SetVar(whereToStore, f"Error {e}")
-            PrintException()
-            import traceback
-            traceback.print_exc()
+                SetVar(whereToStore, f"Error {e}")
+                PrintException()
+                import traceback
+                traceback.print_exc()
 
     if module == "moveTicket":
         issueId = GetParams("issueId")
