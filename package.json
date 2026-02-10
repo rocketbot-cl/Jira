@@ -366,14 +366,14 @@
                             "pr": " customfield_10104"
                         },
                         "title": {
-                            "es": "Campo personalizado",
-                            "en": "Customfield:",
-                            "pr": "Campo personalizado"
+                            "es": "ID del Campo Personalizado",
+                            "en": "Custom Field ID",
+                            "pr": "ID do Campo Personalizado"
                         },
                         "description": {
-                            "es": "Campo personalizado a obtener",
-                            "en": "Custom field to get:",
-                            "pr": "Campo personalizado para obter"
+                            "es": "Ingrese el ID del campo. Para hallarlo: en el ticket, vaya al botón '...' (Acciones) de la parte superior derecha, seleccione 'Exportar XML' y busque el custom field en el archivo.",
+                            "en": "Ingrese el ID del campo. Para encontrarlo: en el ticket, vaya al botón '...' (Acciones) de la parte superior derecha, seleccione 'Exportar XML' y busque el campo personalizado en el archivo.",
+                            "pr": "Insira o ID do campo. Para fazê-lo: no ticket, vá para o botão '...' (Ações) na parte superior direita, selecione 'Exportar XML' e procure o campo personalizado no arquivo."
                         },
                         "id": "custom_field",
                         "css": "col-md-6"
