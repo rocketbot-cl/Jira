@@ -221,10 +221,10 @@ try:
             if whereToStoreToken:
                 SetVar(whereToStoreToken, next_token_out)
         except Exception as e:
-                SetVar(whereToStore, f"Error {e}")
-                PrintException()
-                import traceback
-                traceback.print_exc()
+            SetVar(whereToStore, f"Error {e}")
+            PrintException()
+            import traceback
+            traceback.print_exc()
 
     if module == "moveTicket":
         issueId = GetParams("issueId")
