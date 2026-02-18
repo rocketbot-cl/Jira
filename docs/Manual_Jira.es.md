@@ -52,6 +52,7 @@ Obtiene la lista de tickets de Jira
 |Número de resultados|Maximo numero de tickets a obtener. Por defecto trae todos.|all|
 |Token de Paginación|Opcional. Token devuelto la primera vez ejeutado el comando usado para paginar resultados||
 |Sesion|Nombre de la sesion|conn1|
+|ID del Campo Personalizado|Ingrese el ID del campo. Para hallarlo en el ticket, vaya al botón '...' (Acciones) de la parte superior derecha, seleccione 'Exportar XML' y busque el custom field en el archivo.| customfield_10104|
 |Asignar resultado a variable|Variable donde guardar el resultado|Variable|
 |Obtener token de paginación en variable|Variable donde guardar el token para paginar resultados en próxima ejecución|Variable|
 
