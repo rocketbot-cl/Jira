@@ -120,3 +120,13 @@ Download the attachments of a ticket from Jira
 |Download path|Path where the attachments will be downloaded|/Users/user/Desktop|
 |Session|Name of the session|conn1|
 |Assign result to variable|Variable where to store the result|Variable|
+
+### Upload files
+  
+Upload files to a Jira ticket
+|Parameters|Description|example|
+| --- | --- | --- |
+|Id of the ticket|Ticket ID to upload files|MYP-1|
+|File upload path|Route of the archives going up|/Users/user/Desktop|
+|Session|Name of the session|conn1|
+|Assign result to variable|Variable where to store the result|Variable|
