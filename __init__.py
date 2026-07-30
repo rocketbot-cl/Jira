@@ -403,7 +403,6 @@ try:
                     attachment=file_to_upload
                 )
             if attachment:
-                print("Attachment uploaded successfully.")
                 SetVar(whereToStore, True)
 
         except Exception as e:
@@ -412,7 +411,6 @@ try:
                 
         
 except Exception as e:
-    print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
     PrintException()
     raise e
 
