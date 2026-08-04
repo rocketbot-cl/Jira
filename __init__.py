@@ -393,7 +393,6 @@ try:
         issue = jiraSessions[session].issue(ticket_id)
         
         try:
-            import os
             if not os.path.exists(file_path):
                 raise FileNotFoundError(f"File not found: {file_path}")
             
