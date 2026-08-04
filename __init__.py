@@ -2,7 +2,7 @@
 """
 Base para desarrollo de modulos externos.
 Para obtener el modulo/Funcion que se esta llamando:
-     GetParams("module")
+    GetParams("module")
 
 Para obtener las variables enviadas desde formulario/comando Rocketbot:
     var = GetParams(variable)
@@ -380,8 +380,36 @@ try:
             print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
             PrintException()
             raise e
+        
+        
+    if module == "uploadFile":
+        ticket_id = GetParams("id")
+        session = GetParams("session")
+        file_path = GetParams("file_path")
+        whereToStore = GetParams("whereToStore")
+        
+        if not session:
+            session = "default"
+        issue = jiraSessions[session].issue(ticket_id)
+        
+        try:
+            if not os.path.exists(file_path):
+                raise FileNotFoundError(f"File not found: {file_path}")
+            
+            with open(file_path, "rb") as file_to_upload:
+                attachment = jiraSessions[session].add_attachment(
+                    issue=issue, 
+                    attachment=file_to_upload
+                )
+            if attachment:
+                SetVar(whereToStore, True)
+
+        except Exception as e:
+            PrintException()
+            SetVar(whereToStore, False)
+                
+        
 except Exception as e:
-    print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
     PrintException()
     raise e
 

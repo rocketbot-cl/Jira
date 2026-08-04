@@ -46,7 +46,10 @@ Permite eliminar um ticket em Jira
 Obtém a lista de transições disponíveis de um ticket de Jira
 
 10. Download attachments  
-Download the attachments de um ticket de Jira  
+Download the attachments de um ticket de Jira
+
+11. Enviar arquivos  
+Enviar arquivos para um ticket do Jira  
 
 
 

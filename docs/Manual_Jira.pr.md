@@ -9,7 +9,6 @@ Interaja com o ecossistema Jira.
 *Read this in other languages: [English](Manual_Jira.md), [Português](Manual_Jira.pr.md), [Español](Manual_Jira.es.md)*
   
 ![banner](imgs/Banner_Jira.png)
-## Como instalar este módulo
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
@@ -119,5 +118,15 @@ Download the attachments de um ticket de Jira
 | --- | --- | --- |
 |Id do ticket|Id do ticket a baixar os arquivos adjuntos|MYP-1|
 |Caminho de download|Caminho onde os arquivos adjuntos serão baixados|/Users/user/Desktop|
+|Sessão|Nome da sessão|conn1|
+|Atribuir resultado a variável|Variável onde guardar o resultado|Variável|
+
+### Enviar arquivos
+  
+Enviar arquivos para um ticket do Jira
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Id do ticket|ID do ticket para onde os arquivos serão enviados|MYP-1|
+|Caminho dos arquivos|Rota dos arquivos a subir|/Users/user/Desktop|
 |Sessão|Nome da sessão|conn1|
 |Atribuir resultado a variável|Variável onde guardar o resultado|Variável|

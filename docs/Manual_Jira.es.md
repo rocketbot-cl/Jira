@@ -122,3 +122,13 @@ Descarga los archivos adjuntos de un ticket de Jira
 |Ruta de descarga|Ruta donde se descargarán los archivos adjuntos|/Users/user/Desktop|
 |Sesion|Nombre de la sesion|conn1|
 |Asignar resultado a variable|Variable donde guardar el resultado|Variable|
+
+### Subir archivos
+  
+Subir archivos a un ticket de Jira
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Id del ticket|Id del ticket al que se subiran los archivos|MYP-1|
+|Ruta de los archivos|Ruta de los archivos a subir|/Users/user/Desktop|
+|Sesion|Nombre de la sesion|conn1|
+|Asignar resultado a variable|Variable donde guardar el resultado|Variable|
