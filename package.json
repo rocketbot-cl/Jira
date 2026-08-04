@@ -1294,7 +1294,7 @@
                         "css": "col-md-6"
                     },
                     {
-                        "type": "folder_select",
+                        "type": "file_select",
                         "placeholder": {
                             "es": "/Users/user/Desktop",
                             "en": "/Users/user/Desktop",
@@ -1310,7 +1310,7 @@
                             "en": "Route of the archives going up:",
                             "pr": "Rota dos arquivos a subir:"
                         },
-                        "id": "path",
+                        "id": "file_path",
                         "css": "col-md-6"
                     },
                     {

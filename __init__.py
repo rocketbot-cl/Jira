@@ -385,7 +385,7 @@ try:
     if module == "uploadFile":
         ticket_id = GetParams("id")
         session = GetParams("session")
-        file_path = GetParams("path")
+        file_path = GetParams("file_path")
         whereToStore = GetParams("whereToStore")
         
         if not session:
